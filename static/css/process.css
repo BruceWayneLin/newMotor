@@ -1,0 +1,207 @@
+.timeLineDiv {
+    padding: 0px 15px;
+    background: url(../css/img/route66.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#fcf8e3;
+}
+
+.time-bar {
+    background-color: transparent;
+    height: 3px;
+    width: 98%;
+    position: relative;
+    top: -21px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.timeLine-wrap {
+    margin-bottom: 40px;
+    position: fixed;
+    width: 100%;
+    background-color: grey;
+    z-index: 99;
+    top: 68px;
+}
+
+.eventDivs {
+    height: 120px;
+    white-space: nowrap;
+}
+
+.eventDiv {
+    height: 100px;
+    width: 22%;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    left: 15px;
+}
+
+.eventDiv-animated {
+    -webkit-animation: mymove 5s; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    0%   {right: 0px;}
+    100% {right: 100%;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0%   {right: 0px;}
+    100% {right: 100%;}
+}
+
+@media screen and (max-width: 500px){
+    .eventDiv {
+       min-width: 282px;
+    }
+    .time-bar .progress-bar {
+        width: 100%!important;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(219, 65, 96, 0.24);
+    z-index: 10;
+    position: relative;
+    top: 8px;
+    right: -90%;
+    box-shadow: 2px 2px 2px black;
+}
+
+.specialIcon h3 {
+    width: 25%;
+    position: relative;
+    left: 37%;
+    z-index: 11;
+    top: 11px;
+}
+
+.time-bar .progress {
+    height: 5px;
+}
+
+.circle div {
+    position: relative;
+    top: 14px;
+    left: -20px;
+    width: 90px;
+    padding: 5px 10px;
+    background-color:white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.circle h3 {
+    border: none;
+}
+
+.circle.circleComplete {
+    background-color: #2b689c;
+}
+
+.circle.circleComplete h3 {
+    color: white;
+}
+
+.navbar-collapse.collapse.secondPageNav a {
+    color: grey!important;
+}
+
+@media screen and (max-width: 900px) and (min-width: 689px) {
+  #navbar .navbar-right{
+    font-size:10px!important;
+  }
+  .col-sm-6 {
+    width: 100%!important;
+  }
+ }
+
+#navbar .navbar-right{
+    margin-top: 15px;
+    color: #808080;
+}
+
+.stepTitleDiv {
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    width: 118%;
+    font-size: 18px;
+    /*background-color:rgba(255, 255, 255, 0.79);*/
+}
+
+.ballonFly {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    background: url(../css/img/ballon.png);
+    z-index: 99;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-animation-name: ballonFlyRight; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: ballonFlyRight;
+    animation-duration: 70s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes ballonFlyRight {
+    0% {left: 10%; top: 30px}
+    25% {left: 30%; top: 0px}
+    50% {left: 40%; top: 30px}
+    70% {left: 50%; top: 0px}
+    80% {left: 70%; top: 30px}
+    88% {left: 80%; top: 0px}
+    95% {left: 90%; top: 30px}
+    100% {left: 100%; top: 30px}
+}
+
+@-webkit-keyframes ballonFlyRight {
+    0% {left: 10%; top: 30px}
+    25% {left: 30%; top: 0px}
+    50% {left: 40%; top: 30px}
+    70% {left: 50%; top: 0px}
+    80% {left: 70%; top: 30px}
+    88% {left: 80%; top: 0px}
+    95% {left: 90%; top: 30px}
+    100% {left: 100%; top: 30px}
+}
+
+@media screen and (max-width:768px) {
+    .timeLine-wrap {
+        display:none;
+    }
+}
+
+.processImg img {
+  margin-top: 0px;
+}
+
+input.customerDate[type="text"]:disabled {
+  background-color: white!important;
+}
+
+@media screen and (max-width: 884px) and  {
+  #navbar ul.nav.navbar-nav.navbar-right {
+    display: none;
+  }
+  .navbar-default .navbar-toggle {
+    margin-top: 18px;
+    display: block;
+    float: right;
+    position: absolute;
+    right: 10px;
+    border-color: rgb(167, 163, 163);
+  }
+}
+
