@@ -13,7 +13,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse" v-bind:class="{secondPageNav: alterChangeNav}">
           <ul class="nav navbar-nav navbar-right">
-            <li v-show="toShowActivity"><p @click="goToActivityTwo">活動專區<span class="sr-only">活動專區<</span></p></li>
+            <li v-show="toShowActivity"><p @click="goToActivityTwo">活動專區<span class="sr-only">活動專區</span></p></li>
             <li><p @click="toGoQandAPage">Q&A <span class="sr-only">(current)</span></p></li>
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
@@ -51,7 +51,14 @@
       <img id="MobileIdBanner6" class="img-responsive" src="static/css/img/mobileBanner6.jpg" alt="">
       <div id="activityContainer">
         <div class="textDiv2" style="cursor:pointer" @click="goToActivity"></div>
-        <div class="titleButton"><button @click="toTriggerAnimate()" id="likeToInsured">立即投保<i class="fa fa-chevron-circle-down" aria-hidden="true"></i></button></div>
+        <div class="titleButton">
+          <button @click="toTriggerAnimate()" id="likeToInsured">
+            快速投保
+            <span style="letter-spacing: 4px;">GO!</span>
+            <i class="fa fa-chevron-circle-down hidden" aria-hidden="true"></i>
+          </button>
+          <div id="fingerDiv" class="fingerDiv hidden"></div>
+        </div>
         <img class="kaiKaiCard" src="static/css/img/gifts/150.png" alt="" @click="goToActivity">
         <div class="robotDiv col-xs-12">
           <div class="col-xs-3"></div>
@@ -198,7 +205,7 @@ export default {
       this.$ga.event({
         eventCategory: '首頁',
         eventAction: 'click',
-        eventLabel: 'User Click 立保',
+        eventLabel: 'User Click 立即投保',
         value: ''
       })
     },
@@ -267,6 +274,26 @@ export default {
         { title: '機車強制險', year: 2, price: 1306, discountPrice: 'NT$' + 1422, content: ['每一人體傷20萬元', '每一人死殘200萬元'], color: 'red', cc: '550cc+', textColor: 'white' }
       ]
     },
+    toGetDataFromUrl(url) {
+    var queryStart = url.indexOf('?') + 1;
+    var queryEnd = url.length + 1;
+    var query = url.slice(queryStart, queryEnd - 1);
+    var pairs = query.replace(/\+/g, '').split('&');
+    var parms = {};
+    var i;
+    var n;
+    var v;
+    var nv;
+    if (query === url || query === '') return;
+    for (i = 0; i < pairs.length; i++) {
+      nv = pairs[i].split('=', 2);
+      n = decodeURIComponent(nv[0]);
+      v = decodeURIComponent(nv[1]);
+      if (!parms.hasOwnProperty(n)) parms[n] = [];
+      parms[n].push(nv.length === 2 ? v : null);
+    }
+    return parms;
+    },
     productClicked: function (product, index) {
       this.$parent.secondPageNav = true
       switch (index) {
@@ -324,21 +351,21 @@ export default {
   },
   computed: {
     toOpenAd: function () {
-      console.log('ddddd', localStorage.getItem('toAnimatedDiv'))
-      if (localStorage.getItem('toAnimatedDiv') === 'true') {
-        console.log('12342134213412', localStorage.getItem('toAnimatedDiv'))
-        var body = $('html, body')
-        if (window.innerWidth <= 500) {
-          body.stop().animate({ scrollTop: 420 }, 200, 'swing', function () {
-          })
-          localStorage.setItem('toAnimatedDiv', false)
-        } else {
-          body.stop().animate({ scrollTop: 800 }, 200, 'swing', function () {
-          })
-          localStorage.setItem('toAnimatedDiv', false)
-        }
-      }
-      return this.$parent.$parent.initActivityInfoBlockOpen
+      // console.log('ddddd', localStorage.getItem('toAnimatedDiv'))
+      // if (localStorage.getItem('toAnimatedDiv') === 'true') {
+      //   console.log('12342134213412', localStorage.getItem('toAnimatedDiv'))
+      //   var body = $('html, body')
+      //   if (window.innerWidth <= 500) {
+      //     body.stop().animate({ scrollTop: 420 }, 200, 'swing', function () {
+      //     })
+      //     localStorage.setItem('toAnimatedDiv', false)
+      //   } else {
+      //     body.stop().animate({ scrollTop: 800 }, 200, 'swing', function () {
+      //     })
+      //     localStorage.setItem('toAnimatedDiv', false)
+      //   }
+      // }
+      // return this.$parent.$parent.initActivityInfoBlockOpen
     },
     toInit: function () {
       if (this.toOpenAd && counTime === 0) {
@@ -370,6 +397,31 @@ export default {
   created: function () {
   },
   mounted: function () {
+      var url = window.location.href;
+      var getUrl = this.toGetDataFromUrl(url);
+      if(getUrl){
+        if(getUrl['scrollDown'][0] == 'true'){
+        setTimeout(function(){
+          if ($(window).width() < 500) {
+            $('#myCarousel').css({
+              'background-color': 'rgba(0, 0, 0, 0.56)!important;'
+            })
+            $('html, body').animate({
+              scrollTop: $('#myProducts').offset().top - 183
+            }, 500)
+            localStorage.setItem('toAnimatedDiv', false)
+          } else {
+            $('html, body').animate({
+              scrollTop: $('#myProducts').offset().top - 200
+            }, 500)
+            localStorage.setItem('toAnimatedDiv', false)
+          }
+        }, 500);
+      }else{
+        window.scrollTo(0, 0);
+      }  
+    }
+      
     if ($(window).width() < 500) {
       $('.first-slide').attr('src', './static/css/img/mobileBanner5.jpg')
       $('.first-slide').css({
@@ -395,6 +447,21 @@ export default {
     $('#defaultIndex').css({
       'background-color': 'rgba(0, 0, 0, 0.56)'
     })
+
+    function first() {
+        setTimeout(function() {
+          $('#fingerDiv').addClass('animated bounceInRight').removeClass('hidden')  
+            setTimeout(function(){
+                $('#fingerDiv').removeClass('animated bounceInRight')
+                $('#fingerDiv').addClass('animateInite')
+          }, 2000)
+        }, 1900);
+      }
+    first()
+    setTimeout(function () {       
+        first().then(second()) 
+      }, 1900)
+
     if (window.innerWidth > 500) {
       setTimeout(function () {
         $('#robotImg').addClass('animated bounceInRight')
@@ -428,22 +495,22 @@ export default {
 //    } else {
 //      $('.first-slide').attr('src', './static/css/img/banner5.jpg')
 //    }
-    if (this.$parent.$parent.toAnimatedDiv === true) {
-      if ($(window).width() < 500) {
-        var body = $('html, body')
-        body.stop().animate({ scrollTop: 420 }, 200, 'swing', function () {
-        })
-        this.$parent.$parent.toAnimatedDiv = false
-        localStorage.setItem('toAnimatedDiv', false)
-      } else {
-        body.stop().animate({ scrollTop: 800 }, 200, 'swing', function () {
-        })
-        this.$parent.$parent.toAnimatedDiv = false
-        localStorage.setItem('toAnimatedDiv', false)
-      }
-    } else {
-      window.scrollTo(0, 0)
-    }
+    // if (this.$parent.$parent.toAnimatedDiv === true) {
+    //   if ($(window).width() < 500) {
+    //     var body = $('html, body')
+    //     body.stop().animate({ scrollTop: 420 }, 200, 'swing', function () {
+    //     })
+    //     this.$parent.$parent.toAnimatedDiv = false
+    //     localStorage.setItem('toAnimatedDiv', false)
+    //   } else {
+    //     body.stop().animate({ scrollTop: 800 }, 200, 'swing', function () {
+    //     })
+    //     this.$parent.$parent.toAnimatedDiv = false
+    //     localStorage.setItem('toAnimatedDiv', false)
+    //   }
+    // } else {
+
+// }
   }
 }
 </script>

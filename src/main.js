@@ -29,7 +29,7 @@ new Vue({
     isAplicantValidateWellorNot: false,
     isDevMode: isDevMode,
     isDisabledButton: false,
-    isActivityShow: '',
+    isActivityShow: true,
     readyToGoThanksPage: false,
     readyToConfirmInfo: false,
     isCompleted: false,
@@ -98,7 +98,7 @@ new Vue({
         this.IdistrictList = result.areaList
         this.RelatedList = result.relationshipList
         this.BrandList = result.brandList
-        this.isActivityShow = result.activity
+        this.isActivityShow = true
         this.liveAgentButton = result.liveAgentButton
       })
     }

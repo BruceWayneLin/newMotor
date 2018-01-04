@@ -3,7 +3,6 @@
     <router-view>
     </router-view>
     <div class="liveAgent" v-show="liveAgentButton || liveAgentOn">
-
       <div id="liveAgentArea">
         <!--<div class="blockNonfun">-->
         <!--</div>-->
@@ -23,6 +22,7 @@
         <span>© 2017 Careline. All Rights Reserved.</span>
       </div>
     </footer>
+    
     <div class="modal-mask" v-show="visible">
       <div class="modal-wrapper">
         <div class="modal-container">

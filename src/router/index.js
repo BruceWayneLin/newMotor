@@ -11,8 +11,9 @@ import FailPayment from '@/components/failPayment'
 import NotFound from '@/components/notFound'
 import activityPage from '@/components/activityPage'
 Vue.use(Router)
+
 export default new Router({
-  routes: [
+ routes: [
     {
       path: '/activityPage',
       name: 'activityPage',

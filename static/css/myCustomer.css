@@ -1648,9 +1648,12 @@ ul.nav.navbar-nav.navbar-right a {
   #activityContainer #likeToInsured {
    top: 39%;
   }
+  #fingerDiv.fingerDiv {
+    top: 39%;
+  }
 
   .kaiKaiCard {
-    top: 16%;
+    top: 11%;
     left: 70%;
     transform: scale(1.5);
   }
@@ -1658,12 +1661,15 @@ ul.nav.navbar-nav.navbar-right a {
 
 @media screen and (max-width: 768px) {
   #activityContainer #likeToInsured {
-    top: 45%;
+    top: 50%;
+  }
+  #fingerDiv.fingerDiv {
+    top: 53%;
   }
   #activityContainer .robotDiv .col-xs-6 {
     width: 80%;
     left: 10%;
-    top: -20px;
+    top: 10px;
   }
   .robotDiv {
     top: 30%;
@@ -1684,6 +1690,9 @@ ul.nav.navbar-nav.navbar-right a {
   /*}*/
   .titleButton #likeToInsured {
     top: 50%;
+  }
+  #fingerDiv.fingerDiv {
+    top: 56%;
   }
 }
 
@@ -1718,6 +1727,9 @@ ul.nav.navbar-nav.navbar-right a {
   }
   #activityContainer #likeToInsured {
     top: 71%;
+  }
+  #fingerDiv.fingerDiv {
+    top: 70%;
   }
   .textDiv2 {
     width: 100%;
@@ -1759,6 +1771,9 @@ ul.nav.navbar-nav.navbar-right a {
     top: 68%;
     height: 5%;
   }
+  #fingerDiv.fingerDiv{
+    top: 70%;
+  }
   .kaiKaiCard {
     width: 25%;
     top: 15%;
@@ -1770,6 +1785,9 @@ ul.nav.navbar-nav.navbar-right a {
   #activityContainer #likeToInsured {
     top: 65%;
     height: 5%;
+  }
+  #fingerDiv.fingerDiv {
+    top:68%;
   }
   #activityContainer .textDiv2 {
     height: 17%;
@@ -1809,6 +1827,9 @@ ul.nav.navbar-nav.navbar-right a {
   #activityContainer #likeToInsured {
     top: 44%;
   }
+  #fingerDiv.fingerDiv {
+    top: 47%;
+  }
   .robotDiv .col-xs-12 .col-xs-3 {
     padding: 0px;
   }
@@ -1837,6 +1858,9 @@ and (-webkit-device-pixel-ratio : 3) {
   #activityContainer #likeToInsured {
     top: 52%;
     height: 5%;
+  }
+  #fingerDiv.fingerDiv {
+    top: 52%;
   }
 }
 
@@ -1868,4 +1892,59 @@ and (-webkit-device-pixel-ratio : 3) {
 #activityContainer #likeToInsured:hover {
   border: 2px solid #e84466;
   color: #e84466;
+}
+
+.fingerDiv {
+  background: url(../../static/images/clickHand.png);
+  background-size: contain;
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 210px;
+  right: 0;
+  top: 55%;
+  z-index: 10;
+}
+
+#fingerDiv.fingerDiv.animateInite {
+  -webkit-animation: changeSizeMove 0.5s infinite; /* Safari 4+ */
+  -moz-animation:    changeSizeMove 0.5s infinite; /* Fx 5+ */
+  -o-animation:      changeSizeMove 0.5s infinite; /* Opera 12+ */
+  animation:         changeSizeMove 0.5s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes changeSizeMove {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@-moz-keyframes changeSizeMove {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@-o-keyframes changeSizeMove {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes changeSizeMove {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
 }
