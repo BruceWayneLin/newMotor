@@ -399,7 +399,7 @@ export default {
   mounted: function () {
       var url = window.location.href;
       var getUrl = this.toGetDataFromUrl(url);
-      if(getUrl){
+      if(getUrl && getUrl['scrollDown'] !== undefined){
         if(getUrl['scrollDown'][0] == 'true'){
         setTimeout(function(){
           if ($(window).width() < 500) {
