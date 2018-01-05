@@ -10,7 +10,7 @@ $(function() {
             console.warn = function(){};
         }
     $('#defaultIndex').css({
-      "background-color" : "rgba(0, 0, 0, 0.56)",
+      "background-color" : "transparent",
     });
   $('#myCarousel').css({
     "background-color" : "rgba(0, 0, 0, 0.56)!important",
@@ -51,7 +51,6 @@ $(function() {
       });
 
       $(document).on('scroll', function(){
-
         if($(document).scrollTop() > 35){
           $('.AgentOffline').css({
             "background": "url(./static/css/img/liveAgent/offline.png)",
@@ -89,27 +88,54 @@ $(function() {
                   "background-color" : "white",
               });
               $('#defaultIndex ul li p').css({
-                  "color": "#777"
+                  "color": "gray"
               });
+              $('#navbar button').css({
+                "color": "gray"
+              });
+              
               $('.navbar-default .navbar-toggle .icon-bar').css({
                 "background-color" : "#ddd",
               });
               if($(document).width() < 767) {
-                $('#navbar.navbar-collapse.collapse').css({
-                  "background-color" : "rgba(0, 0, 0, 0.56)"
+                $('#navbar').css({
+                  "background-color" : "rgba(0,0,0,.8)"
                 });
-              };
+                $('#defaultIndex ul li p').css({
+                  "color": "#fff"
+                });
+                $('#navbar #logOut').css({
+                  "color": "#fff"
+                });
+                $('#navbar button').css({
+                  "color": "#fff"
+                });
+              }
               $('#defaultIndex img').attr('src', './static/assets/logo.png' + '?' + urlEndForCache);
             }else{
-              $('#defaultIndex #navbar').css({
-                "background-color" : "rgba(0, 0, 0, 0.56)"
-              });
-              $('#defaultIndex').css({
-                "background-color" : "rgba(0, 0, 0, 0.56)",
-              });
-              $('#defaultIndex ul li p').css({
-                  "color": "#fff",
-              });
+                $('#defaultIndex #navbar').css({
+                  "background-color" : "transparent"
+                });
+                $('#navbar button').css({
+                  "color": "#fff"
+                });
+                $('#defaultIndex').css({
+                  "background-color" : "transparent",
+                });
+                $('#defaultIndex ul li p').css({
+                    "color": "#fff",
+                });
+                if($(document).width() < 767) {
+                  $('#navbar').css({
+                    "background-color" : "rgba(255, 255, 255, 0.8)"
+                  });
+                  $('#defaultIndex ul li p').css({
+                    "color": "gray"
+                  });
+                  $('#navbar button').css({
+                    "color": "gray"
+                  });
+                }
               $('#defaultIndex img').attr('src', './static/assets/logoWhite.png' + '?' + urlEndForCache);
             }
         });

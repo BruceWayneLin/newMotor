@@ -1,6 +1,6 @@
 <template>
   <div class="indexPage">
-    <nav id="defaultIndex" class="navbar navbar-default">
+    <!-- <nav id="defaultIndex" class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex"><a><img id="logoImg" style="max-width:180px;" src="../assets/logoStand.png?v=1s"/></a></div>
@@ -18,9 +18,9 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: transparent;!important;">-->
       <!--<div class="carousel-inner" role="listbox">-->
@@ -399,7 +399,7 @@ export default {
   mounted: function () {
       var url = window.location.href;
       var getUrl = this.toGetDataFromUrl(url);
-      if(getUrl){
+      if(getUrl && getUrl['scrollDown'] !== undefined && getUrl['scrollDown']){
         if(getUrl['scrollDown'][0] == 'true'){
         setTimeout(function(){
           if ($(window).width() < 500) {
@@ -459,7 +459,7 @@ export default {
       }
     first()
     setTimeout(function () {       
-        first().then(second()) 
+        first()
       }, 1900)
 
     if (window.innerWidth > 500) {
@@ -670,14 +670,6 @@ export default {
   .carousel {
     position: relative;
     top: -60px;
-  }
-  #navbar {
-    background-color: rgba(0, 0, 0, 0.56);
-  }
-  #navbar p {
-    color: white;
-    margin: 15px;
-    font-weight: bold;
   }
 
   .tag img {
