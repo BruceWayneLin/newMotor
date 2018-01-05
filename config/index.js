@@ -36,6 +36,13 @@ module.exports = {
         pathRewrite: {
           '^/CareLineMotor': ''
         }
+      },
+      '/CareLineMember/' : {
+        target: 'http://210.242.7.164/CareLineMember/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/CareLineMember': ''
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
