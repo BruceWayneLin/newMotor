@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style=" min-height:720px;" class="container customerInfo animated slideInLeft">
+    <div style=" min-height:600px;" class="container customerInfo animated slideInLeft">
       <div class="row">
         <div class="col-sm-12 thanksDiv">
           <div class="col-sm-12 text-center" style="margin-bottom:10px; padding-top:10%;">
@@ -130,7 +130,6 @@ export default {
       window.open('/activity', '_blank')
     },
     toGoBackIndex: function (val) {
-      localStorage.removeItem('style');
       if (val === 'logo') {
         this.$ga.event({
           eventCategory: '付款失敗頁',

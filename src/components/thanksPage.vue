@@ -122,7 +122,6 @@ export default {
       $('#navbar').toggle()
     },
     toGoBackIndex: function (val) {
-      localStorage.removeItem('style');
       if (val === 'logo') {
         this.$ga.event({
           eventCategory: '訂購成功頁',
@@ -338,7 +337,7 @@ export default {
   }
   .thanksDiv {
     margin-top: 5%;
-    min-height: 555px;
+    min-height: 500px;
   }
   @media screen and (max-width: 414px) {
     .thanksDiv {

@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style="margin-top:50px;  min-height:720px;" class="container customerInfo animated slideInLeft">
+    <div style="margin-top:50px;  min-height:600px;" class="container customerInfo animated slideInLeft">
       <div class="row">
         <div class="col-sm-12 thanksDiv" style="">
           <div class="col-sm-12 text-center" style="margin-bottom:10px;margin-top: 15px;">
@@ -90,7 +90,6 @@ export default {
       window.open('/activity', '_blank')
     },
     toGoBackIndex: function (val) {
-      localStorage.removeItem('style');
       if (val === 'logo') {
         this.$ga.event({
           eventCategory: '錯誤頁',

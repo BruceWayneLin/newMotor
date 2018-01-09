@@ -165,7 +165,7 @@
           <div id="specialLine"></div>
           <div class="col-xs-3">
             <div class="getContact">
-              <h3 style="padding-top: 0px;margin-top:0px;">取得聯繫</h3>
+              <h3 style="padding-top: 0px;margin-top:0px;">關注我們</h3>
              <span id="fbSVG" @click="fbClick()">
                 <a href="https://www.facebook.com/kaistraventure">
                 <div class="fbround">
@@ -1281,8 +1281,17 @@ text-decoration-style: solid;
   }
 }
 
-/* @media (max-width: 1200px){
-  #defaultIndex .navbar-toggle {
+@media screen and (max-width: 1200px) and (min-width: 767px){
+  #footer-Bottom #specialColFooter img {
+    max-width: 50%;
+  }
+  #footer-Bottom #specialColFooter span, #footer-Bottom #specialColFooter h4 {
+    font-size: 16px;
+  }
+  #footer-Bottom #specialColFooter span:nth-child(2) {
+    top: -20px;
+  }
+  /* #defaultIndex .navbar-toggle {
       display: initial;
       margin-top: 20px;
   }
@@ -1291,8 +1300,8 @@ text-decoration-style: solid;
   }
   #defaultIndex .navbar-header {
     width:100%!important;
-  }
-} */
+  } */
+}
 
 @media screen and (max-width: 450px) {
   .activityImg {

@@ -1657,8 +1657,12 @@ ul.nav.navbar-nav.navbar-right a {
   #footer-Bottom #specialColFooter .phone img {
     position: relative;
     left: -123%;
-    top: 25px;
+    top: 2px;
     max-width: 40%;
+  }
+  #footer-Bottom #specialColFooter span:nth-child(2) {
+    left: 5%!important;
+    top: -53px!important;
   }
   #footer-Bottom .phone h4 {
     position: relative;
@@ -1667,6 +1671,7 @@ ul.nav.navbar-nav.navbar-right a {
     font-size: 16px!important;
     white-space: nowrap;
     left: -12px;
+    top: -53px!important;
   }
   #activityContainer .robotDiv .col-xs-6 {
     width: 80%;
@@ -1824,13 +1829,13 @@ ul.nav.navbar-nav.navbar-right a {
 
 @media screen and (max-width: 1024px) and (min-width: 900px) {
   .robotDiv {
-    top: 45%;
+    top: 56%;
   }
   #activityContainer #likeToInsured {
-    top: 30%;
+    top: 38%;
   }
   #fingerDiv.fingerDiv {
-    top: 35%;
+    top: 43%;
   }
   #iphone {
     z-index:11;

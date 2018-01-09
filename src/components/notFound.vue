@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style="height:730px;" class="container customerInfo animated slideInLeft">
+    <div style="height:600px;" class="container customerInfo animated slideInLeft">
       <div class="row">
         <div class="col-sm-12 thanksDiv" style="">
           <div class="col-sm-12 text-center" style="margin-bottom:10px; padding-top:5%;">
@@ -91,7 +91,6 @@ export default {
       window.open('/activity', '_blank')
     },
     toGoBackIndex: function (val) {
-      localStorage.removeItem('style');
       if (val === 'logo') {
         this.$ga.event({
           eventCategory: '找不到頁',
