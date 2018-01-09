@@ -1608,7 +1608,7 @@ ul.nav.navbar-nav.navbar-right a {
   /*}*/
   .textDiv2 {
     width: 36%;
-    top: 10%;
+    top: 6%;
   }
 
   .robotDiv {
@@ -1645,10 +1645,28 @@ ul.nav.navbar-nav.navbar-right a {
 
 @media screen and (max-width: 768px) {
   #activityContainer #likeToInsured {
-    top: 50%;
+    top: 22%;
+    height: 33px;
   }
   #fingerDiv.fingerDiv {
-    top: 53%;
+    top: 24%;
+  }
+  #footer-Bottom #specialColFooter .phone span {
+    font-size: 16px;
+  }
+  #footer-Bottom #specialColFooter .phone img {
+    position: relative;
+    left: -123%;
+    top: 25px;
+    max-width: 40%;
+  }
+  #footer-Bottom .phone h4 {
+    position: relative;
+    top: -30px;
+    color: #888686;
+    font-size: 16px!important;
+    white-space: nowrap;
+    left: -12px;
   }
   #activityContainer .robotDiv .col-xs-6 {
     width: 80%;
@@ -1806,13 +1824,16 @@ ul.nav.navbar-nav.navbar-right a {
 
 @media screen and (max-width: 1024px) and (min-width: 900px) {
   .robotDiv {
-    top: 27%;
+    top: 45%;
   }
   #activityContainer #likeToInsured {
-    top: 44%;
+    top: 30%;
   }
   #fingerDiv.fingerDiv {
-    top: 47%;
+    top: 35%;
+  }
+  #iphone {
+    z-index:11;
   }
   .robotDiv .col-xs-12 .col-xs-3 {
     padding: 0px;
@@ -1931,4 +1952,36 @@ and (-webkit-device-pixel-ratio : 3) {
   100% {
     transform: scale(0.8);
   }
+}
+
+#navbar svg:hover {
+  fill: #d0596e!important;
+}
+
+#footer .title:hover {
+  color: #d0596e!important;
+}
+
+#footer-Bottom span:hover {
+  color: #d0596e!important;
+}
+
+.navbar span:hover {
+  > svg {
+    fill: #d0596e;
+    stroke: #d0596e;
+  }
+}
+#fbSVG:hover {
+  > .fbround {
+      background-color:rgb(66, 103, 178);
+  }
+  > svg {
+    fill: white;
+    stroke: white;
+  }
+}
+
+#footer-Bottom a:hover {
+  text-decoration: none!important;
 }

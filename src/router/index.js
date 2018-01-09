@@ -11,6 +11,9 @@ import FailPayment from '@/components/failPayment'
 import NotFound from '@/components/notFound'
 import activityPage from '@/components/activityPage'
 Vue.use(Router)
+var $ = require('jquery')
+window.jQuery = $
+window.$ = $
 
 export default new Router({
  routes: [

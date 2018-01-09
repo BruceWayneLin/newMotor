@@ -1,5 +1,5 @@
 <template>
-  <div class="thanksPage">
+  <div class="thanksPage" style="margin-top: 80px;">
 
     <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </nav> -->
-
+{{toShowActivity}}
     <div class="row">
         <div class="img processImg">
           <img src="../assets/route994.png" class="img-responsive" alt="">
@@ -122,6 +122,7 @@ export default {
       $('#navbar').toggle()
     },
     toGoBackIndex: function (val) {
+      localStorage.removeItem('style');
       if (val === 'logo') {
         this.$ga.event({
           eventCategory: '訂購成功頁',
@@ -179,7 +180,92 @@ export default {
   },
   computed: {
     toShowActivity: function () {
-      return this.$parent.$parent.isActivityShow
+          setTimeout(function(){
+            localStorage.setItem('style', 'true');
+            $('#defaultIndex img').attr('src', './static/assets/logo.png');
+            $('#defaultIndex #navbar').css({
+              'background-color': 'white'
+            });
+            $('#defaultIndex #navbar span').css({
+              'color': 'gray'
+            });
+            $('#defaultIndex #navbar svg').css({
+              'fill': 'gray'
+            });
+            $('#defaultIndex #navbar p').css({
+              'color': 'gray'
+            });
+            $('#defaultIndex #navbar button').css({
+              'color': 'gray',
+              'border-color': 'gray'
+            });
+            $('#defaultIndex #navbar #logOut').css({
+              'border-color': 'gray',
+              'color': 'white',
+              'background-color': 'gray'
+            })
+            $('#defaultIndex #navbar #logOut span').css({
+              'color': 'white',
+            })
+            $('#defaultIndex #navbar #logOut i').css({
+              'color': 'white',
+            })
+            $('#navbar #logIn').mouseover(function(){
+              $('#navbar #logIn').css({
+                'border-color': '#d0596e',
+                'color': 'white',
+                'background-color': '#d0596e'
+              })
+            });
+            $('#navbar #logIn').mouseleave(function(){
+              $('#navbar #logIn').css({
+                'border-color': 'gray',
+                'color': 'gray',
+                'background-color': 'transparent'
+              })
+            });
+            $('#navbar #logOut').mouseover(function(){
+              $('#navbar #logOut').css({
+                'border-color': '#d0596e',
+                'color': 'white',
+                'background-color': '#d0596e'
+              })
+            });
+
+            $('#motorPli').mouseover(function(){
+                $('.icon-cl-motorbike svg').css({
+                  'fill': '#d0596e'
+                });
+                $('.icon-motor-li').css({
+                  'color': '#d0596e'
+                });
+              });
+              $('#activityPli').mouseover(function(){
+                $('.icon-activity svg').css({
+                  'fill': '#d0596e'
+                });
+                $('.activityW-li').css({
+                  'color': '#d0596e'
+                });
+              });
+              $('#motorPli').mouseleave(function(){
+                $('.icon-cl-motorbike svg').css({
+                  'fill': 'gray'
+                });
+                $('.icon-motor-li').css({
+                  'color': 'gray'
+                });
+              });
+              $('#activityPli').mouseleave(function(){
+                $('.icon-activity svg').css({
+                  'fill': 'gray'
+                });
+                $('.activityW-li').css({
+                  'color': 'gray'
+                });
+              });
+            $('.mask').hide();
+        }, 500);
     }
   },
   mounted () {
@@ -242,9 +328,7 @@ export default {
     margin: 15px;
     font-weight: bold;
   }
-  .processImg {
-    padding-top: 18px;
-  }
+  
 
   .customerInfo, .customerInfo h4, .customerInfo h3 {
     border:none;

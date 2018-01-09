@@ -344,8 +344,11 @@ export default {
       this.$parent.userSelectedProduct = this.selectedProduct
       try {
         sessionStorage.setItem('sessionKey', 'true')
+        localStorage.setItem('style', 'true')
+
       } catch (e) {
       }
+
       this.$router.push('/piform')
     }
   },
@@ -444,9 +447,6 @@ export default {
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "立即投保| Care Line英國凱萊機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"
     /* eslint-enable */
-    $('#defaultIndex').css({
-      'background-color': 'rgba(0, 0, 0, 0.56)'
-    })
 
     function first() {
         setTimeout(function() {
@@ -695,6 +695,10 @@ export default {
     .plateColor {
       height: 16%!important;
     }
+  }
+
+  @media screen and (max-width: 1024px) {
+    
   }
 
   .moveRight {

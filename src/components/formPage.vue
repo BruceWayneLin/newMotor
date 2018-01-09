@@ -24,7 +24,7 @@
 
     <div class="row">
       <div class="img processImg">
-        <img src="../assets/route991.png" class="img-responsive" style="margin-top:15px;" alt="">
+        <img src="../assets/route991.png" class="img-responsive" alt="">
       </div>
     </div>
     <div></div>
@@ -1486,6 +1486,39 @@ export default {
         scrollTo(element, to, duration - 10)
       }, 10)
     },
+    toStyle: function() {
+      $(document).on('scroll', function(){
+          $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          $('#defaultIndex #navbar').css({
+            'background-color': 'white'
+          });
+          $('#defaultIndex #navbar span').css({
+            'color': 'gray'
+          });
+          $('#defaultIndex #navbar svg').css({
+            'fill': 'gray'
+          });
+          $('#defaultIndex #navbar p').css({
+            'color': 'gray'
+          });
+          $('#defaultIndex #navbar button').css({
+            'color': 'gray',
+            'border-color': 'gray'
+          });
+          $('#defaultIndex #navbar #logOut').css({
+            'border-color': 'gray',
+            'color': 'white',
+            'background-color': 'gray'
+          })
+          $('#defaultIndex #navbar #logOut span').css({
+            'color': 'white',
+          })
+           $('#defaultIndex #navbar #logOut i').css({
+            'color': 'white',
+          })
+          $('.mask').hide();
+      });
+    },
     completeStepOne: function () {
       this.$ga.event({
         eventCategory: '車主資料頁',
@@ -1886,6 +1919,60 @@ export default {
       return this.$parent.$parent.isActivityShow
     },
     toComputedData: function () {
+      setTimeout(function(){
+          $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          $('#defaultIndex #navbar').css({
+            'background-color': 'white'
+          });
+          $('#defaultIndex #navbar span').css({
+            'color': 'gray'
+          });
+          $('#defaultIndex #navbar svg').css({
+            'fill': 'gray'
+          });
+          $('#defaultIndex #navbar p').css({
+            'color': 'gray'
+          });
+          $('#defaultIndex #navbar button').css({
+            'color': 'gray',
+            'border-color': 'gray'
+          });
+          $('#defaultIndex #navbar #logOut').css({
+            'border-color': 'gray',
+            'color': 'white',
+            'background-color': 'gray'
+          })
+          $('#defaultIndex #navbar #logOut span').css({
+            'color': 'white',
+          })
+           $('#defaultIndex #navbar #logOut i').css({
+            'color': 'white',
+          })
+          $('#navbar #logOut').mouseover(function(){
+            $('#navbar #logOut').css({
+              'border-color': '#d0596e',
+              'color': 'white',
+              'background-color': '#d0596e'
+            })
+          });
+          $('#motorPli').mouseleave(function(){
+            $('.icon-cl-motorbike svg').css({
+              'fill': 'gray'
+            });
+            $('.icon-motor-li').css({
+              'color': 'gray'
+            });
+          });
+          $('#activityPli').mouseleave(function(){
+            $('.icon-activity svg').css({
+              'fill': 'gray'
+            });
+            $('.activityW-li').css({
+              'color': 'gray'
+            });
+          });
+          $('.mask').hide();
+      }, 300);
       if (this.ischecked) {
         this.ischecked = true
         this.insuredLastName = this.applicantLastName
@@ -2030,6 +2117,7 @@ export default {
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "要保人資料 | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"
     /* eslint-enable */
+    this.toStyle();
     var formData = JSON.parse(this.$localStorage.get('formStore'))
     if (formData) {
       this.$parent.$parent.applicantData = formData.applicantData
@@ -2092,6 +2180,22 @@ export default {
       this.insuredCityId = formData.insuredData['insuredCity'].id
     } else {
     }
+    
+    // if(window.innerWidth <= 480){
+    //   if($(document).scrollTop() > 400){
+    //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //   }else{
+    //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //   }
+    //   $(document).on('scroll', function(){
+    //       console.log($(document).scrollTop())
+    //       if($(document).scrollTop() > 400){
+    //         $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //       }else{
+    //         $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //       }
+    //   });
+    // }
     window.scrollTo(0, 0)
     if (this.$parent.userSelectedProduct === undefined) {
       this.$router.push('/')
@@ -2102,11 +2206,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  /* #navbar {
+    background-color: white!important;
+  }
+  #navbar span,  #navbar p, #navbar button {
+    color: gray!important;
+  }
+  #navbar ul li svg {
+    fill: gray!important;
+  }
+  #navbar button {
+    border-color: gray!important;
+  }
+  .mask{
+    display:none!important;
+  }
+
   #navbar p {
     color: #777;
     margin: 15px;
     font-weight: bold;
-  }
+  } */
   @media screen and (max-width:415px){
     div.iconErrorMessageBack.specialIcon{
       top: 50px!important;
@@ -2115,7 +2235,7 @@ export default {
       font-size: 14px!important;
     }
     .customerForm {
-      margin-top:40px;
+      margin-top:100px;
     }
     .customerForm .contractRules a, .customerForm .contractRules p {
       font-size: 13px!important;
@@ -2173,6 +2293,10 @@ export default {
     padding-left: 0px!important;
   }
 
+  .formPage {
+    margin-top: 80px!important;
+  }
+
   .col-sm-4.innerClass .fa.fa-check {
     color: white;
     top: 26px;
@@ -2197,5 +2321,6 @@ export default {
       left: 70px;
     }
   }
-
+  
 </style>
+ 

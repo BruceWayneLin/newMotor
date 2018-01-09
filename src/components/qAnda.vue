@@ -165,6 +165,7 @@ export default {
     }
   },
   mounted () {
+    $('.mask').hide();
     $('#footer').addClass('hidden')
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "FAQ | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"

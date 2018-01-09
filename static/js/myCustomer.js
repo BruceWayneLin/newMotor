@@ -16,6 +16,7 @@ $(function() {
     "background-color" : "rgba(0, 0, 0, 0.56)!important",
   });
     $(document).ready(function(){
+      
       $('.AgentOffline').css({
         "background": "url(./static/css/img/liveAgent/offlineHover.png)",
         "right": "5px"
@@ -78,68 +79,7 @@ $(function() {
 
       });
 
-      $(document).on('scroll', function(){
-          console.log($(document).scrollTop())
-            if($(document).scrollTop() > 400){
-              $('#defaultIndex').css({
-                "background-color" : "white",
-              });
-              $('#defaultIndex #navbar').css({
-                  "background-color" : "white",
-              });
-              $('#defaultIndex ul li p').css({
-                  "color": "gray"
-              });
-              $('#navbar button').css({
-                "color": "gray"
-              });
-              
-              $('.navbar-default .navbar-toggle .icon-bar').css({
-                "background-color" : "#ddd",
-              });
-              if($(document).width() < 767) {
-                $('#navbar').css({
-                  "background-color" : "rgba(0,0,0,.8)"
-                });
-                $('#defaultIndex ul li p').css({
-                  "color": "#fff"
-                });
-                $('#navbar #logOut').css({
-                  "color": "#fff"
-                });
-                $('#navbar button').css({
-                  "color": "#fff"
-                });
-              }
-              $('#defaultIndex img').attr('src', './static/assets/logo.png' + '?' + urlEndForCache);
-            }else{
-                $('#defaultIndex #navbar').css({
-                  "background-color" : "transparent"
-                });
-                $('#navbar button').css({
-                  "color": "#fff"
-                });
-                $('#defaultIndex').css({
-                  "background-color" : "transparent",
-                });
-                $('#defaultIndex ul li p').css({
-                    "color": "#fff",
-                });
-                if($(document).width() < 767) {
-                  $('#navbar').css({
-                    "background-color" : "rgba(255, 255, 255, 0.8)"
-                  });
-                  $('#defaultIndex ul li p').css({
-                    "color": "gray"
-                  });
-                  $('#navbar button').css({
-                    "color": "gray"
-                  });
-                }
-              $('#defaultIndex img').attr('src', './static/assets/logoWhite.png' + '?' + urlEndForCache);
-            }
-        });
-
+      
       var is_touch_device = function() {
         try {
           document.createEvent("TouchEvent");
