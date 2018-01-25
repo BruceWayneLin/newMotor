@@ -1,6 +1,6 @@
 <template>
   <div class="formPage">
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex()"><a><img id="logoImg" style="max-width:180px;" src="../../static/assets/logo.png"/></a></div>
@@ -18,13 +18,13 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <div class="row">
       <div class="img processImg">
-        <img src="../assets/route991.png" class="img-responsive" style="margin-top:15px;" alt="">
+        <img src="../assets/route991.png" class="img-responsive" alt="">
       </div>
     </div>
     <div></div>
@@ -1486,6 +1486,11 @@ export default {
         scrollTo(element, to, duration - 10)
       }, 10)
     },
+    toStyle: function() {
+      $(document).on('scroll', function(){
+          
+      });
+    },
     completeStepOne: function () {
       this.$ga.event({
         eventCategory: '車主資料頁',
@@ -1886,6 +1891,7 @@ export default {
       return this.$parent.$parent.isActivityShow
     },
     toComputedData: function () {
+     
       if (this.ischecked) {
         this.ischecked = true
         this.insuredLastName = this.applicantLastName
@@ -2030,6 +2036,7 @@ export default {
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "要保人資料 | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"
     /* eslint-enable */
+    // this.toStyle();
     var formData = JSON.parse(this.$localStorage.get('formStore'))
     if (formData) {
       this.$parent.$parent.applicantData = formData.applicantData
@@ -2092,6 +2099,22 @@ export default {
       this.insuredCityId = formData.insuredData['insuredCity'].id
     } else {
     }
+    
+    // if(window.innerWidth <= 480){
+    //   if($(document).scrollTop() > 400){
+    //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //   }else{
+    //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //   }
+    //   $(document).on('scroll', function(){
+    //       console.log($(document).scrollTop())
+    //       if($(document).scrollTop() > 400){
+    //         $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //       }else{
+    //         $('#defaultIndex img').attr('src', './static/assets/logo.png');
+    //       }
+    //   });
+    // }
     window.scrollTo(0, 0)
     if (this.$parent.userSelectedProduct === undefined) {
       this.$router.push('/')
@@ -2102,11 +2125,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #navbar p {
-    color: #777;
-    margin: 15px;
-    font-weight: bold;
-  }
   @media screen and (max-width:415px){
     div.iconErrorMessageBack.specialIcon{
       top: 50px!important;
@@ -2115,7 +2133,7 @@ export default {
       font-size: 14px!important;
     }
     .customerForm {
-      margin-top:40px;
+      margin-top:100px;
     }
     .customerForm .contractRules a, .customerForm .contractRules p {
       font-size: 13px!important;
@@ -2173,6 +2191,12 @@ export default {
     padding-left: 0px!important;
   }
 
+  @media screen and (min-width:500px){
+    .formPage {
+      margin-top: 80px!important;
+    }
+  }
+
   .col-sm-4.innerClass .fa.fa-check {
     color: white;
     top: 26px;
@@ -2197,5 +2221,14 @@ export default {
       left: 70px;
     }
   }
-
+  .navbar span:hover {
+    > svg {
+      fill: #d0596e!important;
+      stroke: #d0596e!important;
+    }
+  }
+  .navbar span:hover {
+    color: #d0596e!important;
+  }
 </style>
+ 

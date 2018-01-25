@@ -1,7 +1,7 @@
 <template>
   <div class="thanksPage">
 
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex('logo')"><a><img id="logoImg" style="max-width:180px;" src="../../static/assets/logo.png"/></a></div>
@@ -19,10 +19,10 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
-
+        </div>
+      </div>
+    </nav> -->
+{{toShowActivity}}
     <div class="row">
         <div class="img processImg">
           <img src="../assets/route994.png" class="img-responsive" alt="">
@@ -38,7 +38,7 @@
           </div>
           <div class="col-sm-12" style="margin-top: 5px;">
             <div class="thanksWords text-center">
-              <p style="color:#e84466;font-size:16px;">提醒您：此次訂購紀錄，並非正式保險契約憑證，核保完成後本公司將會郵寄保險卡及保費收據至保單登記地址。</p>
+              <p style="color:#e84466;font-size:16px;">提醒您：此次訂購紀錄，並非正式保險契約憑證，核保完成後本公司將會郵寄保險卡至保單登記地址。</p>
               <div class="buttonProject text-center" style="margin-top: 30px;">
                 <button class="backToIndexOfOtherPageButton" @click="toGoBackIndex">回到首頁</button>
               </div>
@@ -179,7 +179,92 @@ export default {
   },
   computed: {
     toShowActivity: function () {
-      return this.$parent.$parent.isActivityShow
+        //   setTimeout(function(){
+        //     localStorage.setItem('style', 'true');
+        //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+        //     $('#defaultIndex #navbar').css({
+        //       'background-color': 'white'
+        //     });
+        //     $('#defaultIndex #navbar span').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar svg').css({
+        //       'fill': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar p').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar button').css({
+        //       'color': 'gray',
+        //       'border-color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar #logOut').css({
+        //       'border-color': 'gray',
+        //       'color': 'white',
+        //       'background-color': 'gray'
+        //     })
+        //     $('#defaultIndex #navbar #logOut span').css({
+        //       'color': 'white',
+        //     })
+        //     $('#defaultIndex #navbar #logOut i').css({
+        //       'color': 'white',
+        //     })
+        //     $('#navbar #logIn').mouseover(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
+        //     $('#navbar #logIn').mouseleave(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': 'gray',
+        //         'color': 'gray',
+        //         'background-color': 'transparent'
+        //       })
+        //     });
+        //     $('#navbar #logOut').mouseover(function(){
+        //       $('#navbar #logOut').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
+
+        //     $('#motorPli').mouseover(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#activityPli').mouseover(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#motorPli').mouseleave(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //       $('#activityPli').mouseleave(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //     $('.mask').hide();
+        // }, 500);
     }
   },
   mounted () {
@@ -242,9 +327,7 @@ export default {
     margin: 15px;
     font-weight: bold;
   }
-  .processImg {
-    padding-top: 18px;
-  }
+  
 
   .customerInfo, .customerInfo h4, .customerInfo h3 {
     border:none;
@@ -254,11 +337,17 @@ export default {
   }
   .thanksDiv {
     margin-top: 5%;
-    min-height: 555px;
+    min-height: 500px;
   }
   @media screen and (max-width: 414px) {
     .thanksDiv {
       margin-top: -15px;
     }
+  }
+  .thanksPage {
+      margin-top: 80px;
+    }
+  @media screen and (max-width: 480px) {
+    
   }
 </style>

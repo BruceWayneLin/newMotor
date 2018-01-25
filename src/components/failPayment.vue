@@ -1,7 +1,7 @@
 <template>
   <div class="failPayment">
 
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex('logo')"><a href="#"><img id="logoImg" style="max-width:180px;" src="../../static/assets/logo.png"/></a></div>
@@ -19,9 +19,9 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li style="cursor:default"><p><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <div class="row">
         <div class="img processImg">
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style=" min-height:720px;" class="container customerInfo animated slideInLeft">
+    <div style=" min-height:600px;" class="container customerInfo animated slideInLeft">
       <div class="row">
         <div class="col-sm-12 thanksDiv">
           <div class="col-sm-12 text-center" style="margin-bottom:10px; padding-top:10%;">
@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-
+{{toShowActivity}}
   </div>
 </template>
 
@@ -184,11 +184,11 @@ export default {
     }
   },
   computed: {
-    toShowActivity: function () {
-      return this.$parent.$parent.isActivityShow
+     toShowActivity: function () {
     }
   },
   mounted () {
+
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "機車強制險付款失敗 | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險" 	/* eslint-disable-line rule-name */
     /* eslint-enable */
@@ -238,14 +238,15 @@ export default {
     margin: 15px;
     font-weight: bold;
   }
-  .processImg {
-    padding-top: 18px;
-  }
+  
   .customerInfo, .customerInfo h4 {
     border:none;
   }
   .customerInfo h2 {
     color: #e84466;
     font-weight: bold;
+  }
+  .failPayment {
+    margin-top: 80px;
   }
 </style>

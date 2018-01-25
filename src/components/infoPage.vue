@@ -1,7 +1,7 @@
 <template>
   <div class="infoPage">
 
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex"><a><img id="logoImg" style="max-width:180px;" src="../../static/assets/logo.png"/></a></div>
@@ -19,9 +19,9 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <div class="row">
         <div class="img processImg">
@@ -287,7 +287,7 @@
           </div>
           <div class="col-sm-6">
             <div class="givenCard text-right">
-              <img src="../assets/pics/kaiTalk.png" alt="">
+              <img src="../assets/pics/150.png" style="max-height:80px;" alt="">
               <span>
               您的150元全家禮物卡將同保卡掛號寄出！
               </span>
@@ -299,7 +299,7 @@
       <div class="container-fluid" style="margin-top: 0px;">
         <div class="row">
           <div class="col-sm-12 text-left MobileUse">
-            <button class="btn btn-primary NextButton" @click="toGoOnNextPay" >下一步</button>
+            <button class="btn btn-primary NextButton" @click="toGoOnNextPay" >付款去</button>
             <button class="btn btn-danger NextButton" @click="goBack" >上一步</button>
           </div>
         </div>
@@ -319,7 +319,7 @@
           <div class="modal-body">
             <slot name="body">
               <pdf :page="page" :src="src"></pdf>
-              <span @click="toNxtPDFPage">下一頁 <i class="fa fa-angle-right"></i></span>
+              <span @click="toNxtPDFPage">前往付款 <i class="fa fa-angle-right"></i></span>
             </slot>
           </div>
 
@@ -469,6 +469,22 @@ export default {
       return returnVal
     },
     userEnteredProdcutCC: function () {
+      $('#motorPli').mouseleave(function(){
+            $('.icon-cl-motorbike svg').css({
+              'fill': 'gray'
+            });
+            $('.icon-motor-li').css({
+              'color': 'gray'
+            });
+          });
+          $('#activityPli').mouseleave(function(){
+            $('.icon-activity svg').css({
+              'fill': 'gray'
+            });
+            $('.activityW-li').css({
+              'color': 'gray'
+            });
+          });
       var isMH = this.$parent.$parent.isMH
       var text = this.$parent.$parent.userEnteredProdcutCC + (isMH === true ? 'hp' : 'cc')
       return text
@@ -478,7 +494,21 @@ export default {
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "車籍資料 | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"
     /* eslint-enable */
-
+    if(window.innerWidth <= 480){
+      if($(document).scrollTop() > 400){
+        $('#defaultIndex img').attr('src', './static/assets/logo.png');
+      }else{
+        $('#defaultIndex img').attr('src', './static/assets/logo.png');
+      }
+      $(document).on('scroll', function(){
+          console.log($(document).scrollTop())
+          if($(document).scrollTop() > 400){
+            $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          }else{
+            $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          }
+      });
+    }
     window.scrollTo(0, 0)
     console.log(this.$parent.$parent.applicantData['applicantLastName'])
     console.log(this.$parent.$parent.insuredData['insuredLastName'])
@@ -513,9 +543,6 @@ export default {
     color: #777;
     margin: 15px;
     font-weight: bold;
-  }
-  .processImg {
-    padding-top: 18px;
   }
 
   @media screen and (min-width: 1366px) {
@@ -639,6 +666,9 @@ export default {
       color: #01a29a;
       font-weight: 800;
     }
+    .customerInfo {
+      margin-top: 100px!important;
+    }
   }
 
   @media screen and (max-width: 320px) {
@@ -646,6 +676,9 @@ export default {
       font-size: 13px;
       color: #01a29a;
       font-weight: 800;
+    }
+    .customerInfo {
+      margin-top: 100px!important;
     }
   }
 
@@ -658,5 +691,16 @@ export default {
 
   .givenCard img{
     margin-bottom: 5px;
+    margin-right: 10px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  @media screen and (min-width: 480px) {
+    .infoPage {
+      margin-top: 80px;
+    }
   }
 </style>

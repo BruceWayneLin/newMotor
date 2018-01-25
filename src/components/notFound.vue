@@ -1,7 +1,7 @@
 <template>
   <div class="notFound">
 
-    <nav class="navbar navbar-default">
+    <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <div class="logo" @click="toGoBackIndex('logo')"><a><img id="logoImg" style="max-width:180px;" src="../../static/assets/logo.png"/></a></div>
@@ -19,9 +19,9 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <div class="row">
         <div class="img processImg">
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div style="height:730px;" class="container customerInfo animated slideInLeft">
+    <div style="height:600px;" class="container customerInfo animated slideInLeft">
       <div class="row">
         <div class="col-sm-12 thanksDiv" style="">
           <div class="col-sm-12 text-center" style="margin-bottom:10px; padding-top:5%;">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-
+{{toShowActivity}}
   </div>
 </template>
 
@@ -124,8 +124,7 @@ export default {
     }
   },
   computed: {
-    toShowActivity: function () {
-      return this.$parent.$parent.isActivityShow
+     toShowActivity: function () {
     }
   },
   mounted () {
@@ -156,9 +155,7 @@ export default {
     margin: 15px;
     font-weight: bold;
   }
-  .processImg {
-    padding-top: 18px;
-  }
+  
 
   .customerInfo, .customerInfo h4 {
     border:none;
@@ -170,5 +167,8 @@ export default {
   .customerInfo .thanksDiv {
     margin-top: 30px;
     margin-bottom: 120px;
+  }
+  .notFound{
+    margin-top: 80px;
   }
 </style>

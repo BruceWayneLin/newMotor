@@ -10,6 +10,7 @@ import axiosTwo from 'axios'
 import VueHead from 'vue-head'
 import fakeApi from './fakeJson'
 import MockAdapter from 'axios-mock-adapter'
+
 const mock = new MockAdapter(axiosTwo)
 const isDevMode = false
 

@@ -9,13 +9,48 @@ $(function() {
             console.debug = function(){};
             console.warn = function(){};
         }
-    $('#defaultIndex').css({
-      "background-color" : "rgba(0, 0, 0, 0.56)",
-    });
+    // $('#defaultIndex').css({
+    //   "background-color" : "transparent",
+    // });
   $('#myCarousel').css({
     "background-color" : "rgba(0, 0, 0, 0.56)!important",
   });
+  $(document).ready(function(){
+    if(window.innerWidth <= 480 && window.innerWidth >= 413){
+      $('#defaultIndex').css({
+        'width': $(window).width() + 10 + 'px'
+      });
+      // setTimeout(function(){
+      //   $('#navBtnBar').css({
+      //     'display': 'block',
+      //   });
+      // }, 3000)
+      //  $(window).on('scroll', document, function(){
+      //    if($(document).scrollTop() < 80){
+      //     $('#navBtnBar').css({
+      //       'display': 'block',
+      //     });
+      //    }
+      // });
+
+      // setTimeout(function(){
+      //   $('#navbar').css({
+          
+      //   });
+      // }, 4000)
+      // setTimeout(function(){
+      //   $('#navbar').toggle();
+      // }, 3000)
+
+
+
+      // $('.nav.navbar-nav.navbar-left').css({
+      //   'display': 'block'
+      // });
+    }
+  });
     $(document).ready(function(){
+      
       $('.AgentOffline').css({
         "background": "url(./static/css/img/liveAgent/offlineHover.png)",
         "right": "5px"
@@ -51,7 +86,6 @@ $(function() {
       });
 
       $(document).on('scroll', function(){
-
         if($(document).scrollTop() > 35){
           $('.AgentOffline').css({
             "background": "url(./static/css/img/liveAgent/offline.png)",
@@ -79,41 +113,7 @@ $(function() {
 
       });
 
-      $(document).on('scroll', function(){
-          console.log($(document).scrollTop())
-            if($(document).scrollTop() > 400){
-              $('#defaultIndex').css({
-                "background-color" : "white",
-              });
-              $('#defaultIndex #navbar').css({
-                  "background-color" : "white",
-              });
-              $('#defaultIndex ul li p').css({
-                  "color": "#777"
-              });
-              $('.navbar-default .navbar-toggle .icon-bar').css({
-                "background-color" : "#ddd",
-              });
-              if($(document).width() < 767) {
-                $('#navbar.navbar-collapse.collapse').css({
-                  "background-color" : "rgba(0, 0, 0, 0.56)"
-                });
-              };
-              $('#defaultIndex img').attr('src', './static/assets/logo.png' + '?' + urlEndForCache);
-            }else{
-              $('#defaultIndex #navbar').css({
-                "background-color" : "rgba(0, 0, 0, 0.56)"
-              });
-              $('#defaultIndex').css({
-                "background-color" : "rgba(0, 0, 0, 0.56)",
-              });
-              $('#defaultIndex ul li p').css({
-                  "color": "#fff",
-              });
-              $('#defaultIndex img').attr('src', './static/assets/logoWhite.png' + '?' + urlEndForCache);
-            }
-        });
-
+      
       var is_touch_device = function() {
         try {
           document.createEvent("TouchEvent");

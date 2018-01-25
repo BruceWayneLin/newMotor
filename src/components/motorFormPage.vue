@@ -1,6 +1,6 @@
 <template>
   <div class="motorFormPage">
-
+<!-- 
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -19,9 +19,9 @@
             <li><a href="https://www.facebook.com/kaistraventure/" target="_blank"><p><i class="fa fa-facebook-square" aria-hidden="true"></i></p></a></li>
             <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+        </div>
+      </div>
+    </nav> -->
 
     <div class="row">
         <div class="img processImg">
@@ -319,7 +319,7 @@
           </div>
           <div class="col-sm-7">
             <div class="col-sm-4 text-left">
-              <div style="padding-top:30px">
+              <div style="padding-top:30px" id="sixFlag">
                 <span class="formTitleSpan" style="margin-left: 0px;">保險開始日:</span>
                 <span class="hideInLowScreen birthSpan" style="padding-left:14px;">保險開始日</span>
               </div>
@@ -572,7 +572,8 @@ export default {
       window.open('/activity', '_blank')
     },
     toCheckAndValiMotorDate: function () {
-      window.scrollTo(0, document.body.scrollHeight)
+      document.querySelector('#flagSix').scrollIntoView();
+      // window.scrollTo(0, document.body.scrollHeight)
       this.validateMotoYear()
       this.validateMotoMonth()
     },
@@ -1435,6 +1436,22 @@ export default {
       return returnVal
     },
     brandList: function () {
+      $('#motorPli').mouseleave(function(){
+            $('.icon-cl-motorbike svg').css({
+              'fill': 'gray'
+            });
+            $('.icon-motor-li').css({
+              'color': 'gray'
+            });
+          });
+          $('#activityPli').mouseleave(function(){
+            $('.icon-activity svg').css({
+              'fill': 'gray'
+            });
+            $('.activityW-li').css({
+              'color': 'gray'
+            });
+          });
       let returnArrayBrand = []
       for (let i = 0; i < this.$parent.$parent.BrandList.length; i++) {
         if (!this.$parent.$parent.BrandList[i].topDisplay) {
@@ -1471,6 +1488,21 @@ export default {
     }
   },
   mounted () {
+    if(window.innerWidth <= 480){
+      if($(document).scrollTop() > 400){
+        $('#defaultIndex img').attr('src', './static/assets/logo.png');
+      }else{
+        $('#defaultIndex img').attr('src', './static/assets/logo.png');
+      }
+      $(document).on('scroll', function(){
+          console.log($(document).scrollTop())
+          if($(document).scrollTop() > 400){
+            $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          }else{
+            $('#defaultIndex img').attr('src', './static/assets/logo.png');
+          }
+      });
+    }
     /* eslint-disable */
     var CE_SNAPSHOT_NAME = "車籍資料 | Care Line英國凱萊 機車強制險 | 立刻投保 | Care Line英國凱萊 機車強制險"
     /* eslint-enable */
@@ -1543,7 +1575,7 @@ export default {
 <style scoped>
   .logo {
     height: 40px;
-    widht: auto;
+    width: auto;
   }
   .carousel {
     position: relative;
@@ -1560,9 +1592,6 @@ export default {
   .customerForm {
     margin-bottom: 173px;
     margin-top: 5%;
-  }
-  .processImg {
-    padding-top: 18px;
   }
 
   span.errorMessage.motoErrorMsg {
@@ -1595,6 +1624,9 @@ export default {
     #motorFormPage div.carPlateLineText {
       display:none;
     }
+    #motorFormPage {
+      margin-top: 100px;
+    }
   }
 
   .modal-body span p {
@@ -1616,6 +1648,11 @@ export default {
   }
   .customerForm span {
     text-align: left;
+  }
+  @media screen and (min-width: 480px) {
+    .motorFormPage {
+      margin-top: 80px;
+    }
   }
 
 </style>
