@@ -9,11 +9,45 @@ $(function() {
             console.debug = function(){};
             console.warn = function(){};
         }
-    $('#defaultIndex').css({
-      "background-color" : "transparent",
-    });
+    // $('#defaultIndex').css({
+    //   "background-color" : "transparent",
+    // });
   $('#myCarousel').css({
     "background-color" : "rgba(0, 0, 0, 0.56)!important",
+  });
+  $(document).ready(function(){
+    if(window.innerWidth <= 480 && window.innerWidth >= 413){
+      $('#defaultIndex').css({
+        'width': $(window).width() + 10 + 'px'
+      });
+      // setTimeout(function(){
+      //   $('#navBtnBar').css({
+      //     'display': 'block',
+      //   });
+      // }, 3000)
+      //  $(window).on('scroll', document, function(){
+      //    if($(document).scrollTop() < 80){
+      //     $('#navBtnBar').css({
+      //       'display': 'block',
+      //     });
+      //    }
+      // });
+
+      // setTimeout(function(){
+      //   $('#navbar').css({
+          
+      //   });
+      // }, 4000)
+      // setTimeout(function(){
+      //   $('#navbar').toggle();
+      // }, 3000)
+
+
+
+      // $('.nav.navbar-nav.navbar-left').css({
+      //   'display': 'block'
+      // });
+    }
   });
     $(document).ready(function(){
       

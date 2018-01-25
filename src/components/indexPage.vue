@@ -48,7 +48,7 @@
     <!--</div>-->
     <div>
       <img id="DesktopIdBanner6" class="img-responsive" src="static/css/img/banner5.jpg" alt="">
-      <img id="MobileIdBanner6" class="img-responsive" src="static/css/img/mobileBanner6.jpg" alt="">
+      <img style="margin-top:72px;" id="MobileIdBanner6" class="img-responsive" src="static/css/img/mobileBanner6.jpg" alt="">
       <div id="activityContainer">
         <div class="textDiv2" style="cursor:pointer" @click="goToActivity"></div>
         <div class="titleButton">
@@ -162,6 +162,266 @@ export default {
     ]
   },
   methods: {
+    // stylefun: function(){
+    //   this.toStyle();
+    //   $(document).ready(function(){
+    //     if(!localStorage.getItem('style')){
+    //       if($(document).scrollTop() < 400 && $(document).width() < 767){
+    //         $('#defaultIndex ul svg').css({
+    //           "fill": "gray"
+    //         });
+    //       }
+    //     }
+    //     if(window.innerWidth <= 767){
+    //       $('#MobileIdBanner6').css({
+    //         'max-width': '120%'
+    //       });
+    //     }else{
+    //       $('#defaultIndex ul li span').mouseover(function(){
+    //         if($(document).scrollTop() > 400){
+    //           $('#motorPli').mouseover(function(){
+    //             $('.icon-cl-motorbike svg').css({
+    //               'fill': '#d0596e'
+    //             });
+    //             $('.icon-motor-li').css({
+    //               'color': '#d0596e'
+    //             });
+    //           });
+    //           $('#activityPli').mouseover(function(){
+    //             $('.icon-activity svg').css({
+    //               'fill': '#d0596e'
+    //             });
+    //             $('.activityW-li').css({
+    //               'color': '#d0596e'
+    //             });
+    //           });
+    //           $('#motorPli').mouseleave(function(){
+    //             $('.icon-cl-motorbike svg').css({
+    //               'fill': 'gray'
+    //             });
+    //             $('.icon-motor-li').css({
+    //               'color': 'gray'
+    //             });
+    //           });
+    //           $('#activityPli').mouseleave(function(){
+    //             $('.icon-activity svg').css({
+    //               'fill': 'gray'
+    //             });
+    //             $('.activityW-li').css({
+    //               'color': 'gray'
+    //             });
+    //           });
+    //         }else{
+    //           console.log('123423142', localStorage.getItem('style'));
+    //           if(!localStorage.getItem('style') && localStorage.getItem('style') == null){
+    //             $('#motorPli').mouseover(function(){
+    //               $('.icon-cl-motorbike svg').css({
+    //                 'fill': '#d0596e'
+    //               });
+    //               $('.icon-motor-li').css({
+    //                 'color': '#d0596e'
+    //               });
+    //             });
+    //             $('#activityPli').mouseover(function(){
+    //               $('.icon-activity svg').css({
+    //                 'fill': '#d0596e'
+    //               });
+    //               $('.activityW-li').css({
+    //                 'color': '#d0596e'
+    //               });
+    //             });
+    //             $('#motorPli').mouseleave(function(){
+    //               $('.icon-cl-motorbike svg').css({
+    //                 'fill': 'white'
+    //               });
+    //               $('.icon-motor-li').css({
+    //                 'color': 'white'
+    //               });
+    //             });
+    //             $('#activityPli').mouseleave(function(){
+    //               $('.icon-activity svg').css({
+    //                 'fill': 'white'
+    //               });
+    //               $('.activityW-li').css({
+    //                 'color': 'white'
+    //               });
+    //             });
+    //           }
+    //         }
+    //       });
+    //         $('#fbSVG').mouseover(function(){
+    //           $('#fbSVG .fbround svg').css({
+    //             'fill': 'white'
+    //           });
+    //         });
+    //         $('#fbSVG').mouseleave(function(){
+    //           $('#fbSVG .fbround svg').css({
+    //             'fill': '#4267b2'
+    //           });
+    //         });
+    //     }
+    //   });
+    //   $(window).on('scroll', document, function(){
+    //       console.log($(document).scrollTop())
+    //       if(!JSON.parse(localStorage.getItem('style'))){
+    //          if($(document).scrollTop() > 400){
+             
+    //           // $('#defaultIndex #navbar').css({
+    //           //     "background-color" : "hsla(0,0%,100%,.8)",
+    //           // });
+    //           $('#defaultIndex ul li p').css({
+    //               "color": "gray"
+    //           });
+    //           $('#navbar button').css({
+    //             "color": "gray"
+    //           });
+    //           $('#navbar #logOut').css({
+    //               "color": "gray"
+    //           });
+    //           $('.navbar-default .navbar-toggle .icon-bar').css({
+    //             "background-color" : "#ddd",
+    //           });
+    //           if($(document).width() < 767) {
+    //             $('#navbar').css({
+    //               "background-color" : "rgba(0,0,0,.8)"
+    //             });
+    //             $('#defaultIndex ul li span').css({
+    //               "color": "white"
+    //             });
+    //             $('#defaultIndex ul li p').css({
+    //               "color": "white"
+    //             });
+    //             $('#defaultIndex ul li i svg').css({
+    //               "fill": "white"
+    //             });
+    //             $('#navbar #logOut').css({
+    //               "color": "#fff"
+    //             });
+    //             $('#navbar button').css({
+    //               "color": "#fff"
+    //             });
+    //           } else {
+    //             $('#navbar #logOut').css({
+    //               "color": "gray",
+    //               "background-color": "white"
+    //             });
+    //              if($(document).scrollTop() > 400){
+    //                $('#navbar #logIn').mouseover(function(){
+    //                 $('#navbar #logIn').css({
+    //                   "color": "white", 
+    //                   "background-color": "#d0596e" 
+    //                 }); 
+    //               });
+    //               $('#navbar #logIn').mouseleave(function(){
+    //                 $('#navbar #logIn').css({
+    //                   "color": "gray", 
+    //                   "border-color": "gray", 
+    //                   "background-color": "transparent" 
+    //                 }); 
+    //               });
+    //              }else{
+    //               // $('#defaultIndex ul li span').css({
+    //               // "color": "gray"
+    //               // });
+    //               // $('#defaultIndex ul li span').css({
+    //               // "color": "gray"
+    //               // });
+    //               // $('#defaultIndex ul li svg').css({
+    //               //   "fill": "gray"
+    //               // });
+    //              }
+    //             $('#defaultIndex ul li span').css({
+    //               "fill": "gray",
+    //               "color": "gray"
+    //               }); 
+    //             $('#defaultIndex ul li i svg').css({
+    //               "fill": "gray"
+    //             });
+    //             $('#navbar button').css({
+    //               "color": "gray",
+    //               "border-color": "gray"
+    //             });
+    //             $('#navbar #logOut').css({
+    //               "color": "white",
+    //               "background-color": "gray"
+    //             });
+    //           }
+    //         }else{
+    //             //smaller 
+               
+    //             // $('#navbar #logOut').css({
+    //             //   "color": "gray"
+    //             // });
+    //             $('#defaultIndex').css({
+    //               "background-color" : "transparent",
+    //             });
+    //             $('#defaultIndex ul li p').css({
+    //                 "color": "#fff",
+    //             });
+    //             $('#defaultIndex ul li i svg').css({
+    //                 "fill": "white",
+    //             });
+    //             if($(document).width() < 767) {
+                 
+    //               $('#defaultIndex ul li p').css({
+    //                 "color": "gray"
+    //               });
+    //               $('#defaultIndex ul svg').css({
+    //                 "fill": "gray"
+    //               });
+    //               $('#navbar button').css({
+    //                 "color": "gray"
+    //               });
+    //               $('#defaultIndex ul li span').css({
+    //               "color": "gray"
+    //               });
+    //             $('#defaultIndex ul li p').css({
+    //               "color": "gray"
+    //             });
+    //             $('#defaultIndex ul li i svg').css({
+    //               "fill": "gray"
+    //             });
+    //             }else {
+    //               $('#navbar #logOut').css({
+    //                 "color": "gray",
+    //                 "background-color": "white",
+    //                 "border-color": "white"
+    //               });
+    //               $('#navbar #logIn').css({
+    //                 "border-color": "white"
+    //               });
+    //               $('#defaultIndex ul li span').css({
+    //               "fill": "white",
+    //               "color": "white"
+    //               }); 
+    //               if($(document).scrollTop() < 400){
+    //               $('#navbar #logIn').mouseover(function(){
+    //                 $('#navbar #logIn').css({
+    //                   "color": "#d0596e", 
+    //                   "background-color": "transparent",
+    //                   "border-color":"#d0596e"
+    //                 }); 
+    //               });
+    //               $('#navbar #logIn').mouseleave(function(){
+    //                 $('#navbar #logIn').css({
+    //                   "color": "white", 
+    //                   "background-color": "transparent",
+    //                   "border-color":"white"
+    //                 }); 
+    //               });
+    //               $('#navbar #logOut').mouseleave(function(){
+    //                 $('#navbar #logOut').css({
+    //                   "color": "white", 
+    //                   "background-color": "gray",
+    //                   "border-color":"gray"
+    //                 }); 
+    //               });
+    //              }
+    //             }
+    //         }  
+    //       }; 
+    //   });
+    // },
     showingNavBar: function () {
       $('#navbar').css({
         'height': '300px'

@@ -1,5 +1,5 @@
 <template>
-  <div class="infoPage" style="margin-top:80px;">
+  <div class="infoPage">
 
     <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -287,7 +287,7 @@
           </div>
           <div class="col-sm-6">
             <div class="givenCard text-right">
-              <img src="../assets/pics/150.png" style="max-height:110px;" alt="">
+              <img src="../assets/pics/150.png" style="max-height:80px;" alt="">
               <span>
               您的150元全家禮物卡將同保卡掛號寄出！
               </span>
@@ -691,5 +691,16 @@ export default {
 
   .givenCard img{
     margin-bottom: 5px;
+    margin-right: 10px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  @media screen and (min-width: 480px) {
+    .infoPage {
+      margin-top: 80px;
+    }
   }
 </style>

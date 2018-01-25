@@ -617,6 +617,7 @@ nav {
 
 @media screen and (max-width:495px){
   .navbar-default .navbar-toggle {
+    display:initial;
   }
 }
 
@@ -1510,6 +1511,18 @@ ul.nav.navbar-nav.navbar-right a {
   .MobileUse .col-sm-12 .btn.btn-primary.NextButton {
     margin-right: 18%;
   }
+  #footer-Bottom .phone h4 {
+    top: 33px!important;
+    left: 0px!important;
+  }
+  #footer-Bottom #specialColFooter .phone span:nth-child(2) {
+    left: -20px!important;
+    top: -38px!important;
+  }
+  #footer-Bottom #specialColFooter .phone img {
+    left: -11px!important;
+    top: -11px!important;
+  }
 }
 
 .bkGround {
@@ -1608,7 +1621,7 @@ ul.nav.navbar-nav.navbar-right a {
   /*}*/
   .textDiv2 {
     width: 36%;
-    top: 6%;
+    top: 16%;
   }
 
   .robotDiv {
@@ -1637,7 +1650,7 @@ ul.nav.navbar-nav.navbar-right a {
   }
 
   .kaiKaiCard {
-    top: 11%;
+    top: 21%;
     left: 70%;
     transform: scale(1.5);
   }
@@ -1645,11 +1658,11 @@ ul.nav.navbar-nav.navbar-right a {
 
 @media screen and (max-width: 768px) {
   #activityContainer #likeToInsured {
-    top: 22%;
+    top: 30%;
     height: 33px;
   }
   #fingerDiv.fingerDiv {
-    top: 24%;
+    top: 32%;
   }
   #footer-Bottom #specialColFooter .phone span {
     font-size: 16px;
@@ -1662,24 +1675,24 @@ ul.nav.navbar-nav.navbar-right a {
   }
   #footer-Bottom #specialColFooter span:nth-child(2) {
     left: 5%!important;
-    top: -53px!important;
+    top: 8px!important;
   }
   #footer-Bottom .phone h4 {
     position: relative;
     top: -30px;
     color: #888686;
-    font-size: 16px!important;
+    font-size: 19px!important;
     white-space: nowrap;
     left: -12px;
-    top: -53px!important;
+    top: 7px!important;
   }
   #activityContainer .robotDiv .col-xs-6 {
     width: 80%;
     left: 10%;
-    top: 10px;
+    top:50px;
   }
   .robotDiv {
-    top: 30%;
+    top: 35%;
   }
 }
 
@@ -1723,9 +1736,11 @@ ul.nav.navbar-nav.navbar-right a {
 @media screen and (max-width: 767px) {
   #MobileIdBanner6 {
     display: inherit!important;
+    min-height: 450px;
   }
   #DesktopIdBanner6 {
     display: none;
+    height: 0px;
   }
   #activityContainer .robotDiv .col-xs-6 {
     width: 100%;
@@ -1767,46 +1782,54 @@ ul.nav.navbar-nav.navbar-right a {
   }
   .textDiv2 {
     height: 15%;
-    top: 15%;
+    top: 15%!important;
     left: -150px!important;
     width: 66%;
   }
   .robotDiv {
-    top: 24%;
+    top: 28%;
   }
   #activityContainer #likeToInsured {
-    top: 68%;
+    top: 71%;
     height: 5%;
   }
   #fingerDiv.fingerDiv{
-    top: 70%;
+    top: 73%;
   }
   .kaiKaiCard {
     width: 25%;
-    top: 15%;
+    top: 15%!important;
     left:67%;
   }
 }
 
 @media screen and (max-width: 375px) {
   #activityContainer #likeToInsured {
-    top: 65%;
+    top: 72%;
     height: 5%;
   }
   #fingerDiv.fingerDiv {
-    top:68%;
+    top:74%;
   }
   #activityContainer .textDiv2 {
-    height: 17%;
-    top: 15%;
+    height: 19%;
+    top: 15%!important;
     left: -45px;
   }
   .kaiKaiCard {
     width: 20%;
-    top: 17%;
+    top: 18%!important;
   }
   .robotDiv {
-    top: 22%;
+    top: 32%;
+  }
+  #footer img {
+    min-width: 60px;
+    position: relative;
+    left: -7px;
+  }
+  #footer .title {
+    left: -127%!important;
   }
 }
 
@@ -1827,18 +1850,27 @@ ul.nav.navbar-nav.navbar-right a {
   }
 }
 
+@media screen and (max-width: 768px){
+  .textDiv2 {
+    top:12%;
+  }
+  .kaiKaiCard {
+    top: 13%;
+  }
+}
+
 @media screen and (max-width: 1024px) and (min-width: 900px) {
   .robotDiv {
-    top: 56%;
+    top: 64%;
   }
   #activityContainer #likeToInsured {
-    top: 38%;
+    top: 46%;
   }
   #fingerDiv.fingerDiv {
-    top: 43%;
+    top: 52%;
   }
   #iphone {
-    z-index:11;
+    z-index:1;
   }
   .robotDiv .col-xs-12 .col-xs-3 {
     padding: 0px;
@@ -1866,11 +1898,11 @@ and (-webkit-device-pixel-ratio : 3) {
     top: 18%;
   }
   #activityContainer #likeToInsured {
-    top: 52%;
+    top: 48%;
     height: 5%;
   }
   #fingerDiv.fingerDiv {
-    top: 52%;
+    top: 51%;
   }
 }
 
@@ -1897,6 +1929,7 @@ and (-webkit-device-pixel-ratio : 3) {
 
 #MobileIdBanner6 {
   display: none;
+  height: 0px;
 }
 
 #activityContainer #likeToInsured:hover {

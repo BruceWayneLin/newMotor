@@ -1,5 +1,5 @@
 <template>
-  <div class="motorFormPage" style="margin-top: 80px;">
+  <div class="motorFormPage">
 <!-- 
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -1648,6 +1648,11 @@ export default {
   }
   .customerForm span {
     text-align: left;
+  }
+  @media screen and (min-width: 480px) {
+    .motorFormPage {
+      margin-top: 80px;
+    }
   }
 
 </style>

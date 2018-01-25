@@ -3,8 +3,8 @@
     <nav id="defaultIndex" class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <div class="logo" style="cursor:pointer;"><a href="https://www.careline.com.tw/" @click="userClickLogo()"><img id="logoImg" style="max-width:180px;" src="./assets/logoStand.png?v=1s"/></a></div>
-          <button type="button" @click="showingNavBar()" class="navbar-toggle collapsed" data-toggle="collapse">
+          <div class="logo" style="cursor:pointer;"><a href="https://www.careline.com.tw/" @click="userClickLogo()"><img id="logoImg" style="max-width:180px;" src="./assets/logo.png?v=1s"/></a></div>
+          <button id="navBtnBar" type="button" @click="showingNavBar()" class="navbar-toggle collapsed" data-toggle="collapse">
             <span class="sr-only">Toggle navigation</span>
             <i class="fa fa-times hidden"></i>
             <span class="icon-bar"></span>
@@ -62,25 +62,24 @@
                   C5.46,8.664,9.47,12.382,7.807,15.316z"/>
                 </svg> 
               </i>
-              <span class="activityW-li" @click="userClickSpan('活動專區')">活動專區</span></p></a>
+              <span class="activityW-li" @click="userClickSpan('活動專區')">熱門活動</span></p></a>
               </li>
           </ul>
-          <a href="/CareLineMember/member/">
-          <button id="logIn" class="" @click="toMemberZone()">
-            <i class="fa fa-user"></i>
-            {{memberLoginWords}}
-          </button>
-          </a>
-          <button id="logOut" class="logOut hidden" @click="toLogOut()">
-            <i class="fa fa-sign-out"></i>
-            <span>登出</span>
-          </button>
+          <div class="hidden">
+            <a href="/CareLineMember/member/">
+            <button id="logIn" class="" @click="toMemberZone()">
+              <i class="fa fa-user"></i>
+              {{memberLoginWords}}
+            </button>
+            </a>
+            <button id="logOut" class="logOut hidden" @click="toLogOut()">
+              <i class="fa fa-sign-out"></i>
+              <span>登出</span>
+            </button>
+          </div>  
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>
-    <div class="mask">
-    </div>        <!-- <li><p style="cursor:default"><i class="fa fa-phone" aria-hidden="true"></i>免費客服專線 0800-234-088 (週一~週五 09:30~18:00)</p></li> -->
-
     <router-view>
     </router-view>
     <div @click="clickLiveAgented()" class="liveAgent" v-show="liveAgentButton || liveAgentOn">
@@ -101,25 +100,25 @@
         </div>
         <div class="col-xs-10">
           <div class="col-xs-3 text-center">
-            <a href="/story" @click="footerIcons('凱的故事')">
+            <a href="/story" target="_blank" @click="footerIcons('凱的故事')">
             <img class="img-responsive" src="static/images/footerImg/kai.png" alt="">
             <p class="title">凱的故事</p>
             </a>
           </div>
           <div class="col-xs-3 text-center">
-            <a href="/aboutus" @click="footerIcons('關於我們')">
+            <a href="/aboutus" target="_blank" @click="footerIcons('關於我們')">
             <img class="img-responsive" src="static/images/footerImg/about.png" alt="">
             <p class="title">關於我們</p>
             </a>
           </div>
           <div class="col-xs-3 text-center">
-            <a href="/policy" @click="footerIcons('保單條款')">
+            <a href="/policy" target="_blank" @click="footerIcons('保單條款')">
             <img class="img-responsive" src="static/images/footerImg/condition.png" alt="">
             <p class="title">保單條款</p>
             </a>
           </div>
           <div class="col-xs-3 text-center">
-            <a href="/faq" @click="footerIcons('FAQ')">
+            <a href="/faq" target="_blank" @click="footerIcons('FAQ')">
               <img class="img-responsive" src="static/images/footerImg/qa.png" alt="">
               <p class="title">FAQ</p>
             </a>
@@ -131,20 +130,20 @@
     </footer>
     <footer id="footer-Bottom">
       <div class="container">
-        <div class="col-xs-12">
+        <div class="col-xs-12" id="needToCenterCol">
           <div class="col-xs-6 text-center">
             <h3>快速連結</h3>
             <div class="col-xs-12 text-center">
-              <a href="/CareLineTravel/travel" @click="superLinke('國外旅平')"><span style="cursor:pointer;">國外旅平</span></a>
-              <a href="/CareLineMotor/motorbike/index.html" @click="superLinke('機車強制')"><span style="cursor:pointer;">機車強制</span></a>
-              <a href="/activity" @click="superLinke('熱門活動')"><span style="cursor:pointer;">熱門活動</span></a>
-              <a href="/legal/regulations" @click="superLinke('法規專區')"><span style="cursor:pointer;">法規專區</span></a>
+              <a href="/CareLineTravel/travel" target="_blank" @click="superLinke('國外旅平')"><span style="cursor:pointer;">國外旅平</span></a>
+              <a href="/CareLineMotor/motorbike/index.html" target="_blank" @click="superLinke('機車強制')"><span style="cursor:pointer;">機車強制</span></a>
+              <a href="/activity" @click="superLinke('熱門活動')" target="_blank"><span style="cursor:pointer;">熱門活動</span></a>
+              <a href="/legal/regulations" @click="superLinke('法規專區')"  target="_blank"><span style="cursor:pointer;">法規專區</span></a>
             </div>
             <div class="col-xs-12 text-center">
-              <a href="/legal/declaration" @click="superLinke('聲明事項')"><span style="cursor:pointer;">聲明事項</span></a>
-              <a href="/legal/obligations" @click="superLinke('義務內容')"><span style="cursor:pointer;">義務內容</span></a>
-              <a href="/legal/terms_of_use" @click="superLinke('使用條款')"><span style="cursor:pointer;">使用條款</span></a>
-              <a href="/legal/privacy_policy" @click="superLinke('隱私政策')"><span style="cursor:pointer;">隱私政策</span></a>
+              <a href="/legal/declaration" @click="superLinke('聲明事項')" target="_blank"><span style="cursor:pointer;">聲明事項</span></a>
+              <a href="/legal/obligations" @click="superLinke('義務內容')" target="_blank"><span style="cursor:pointer;">義務內容</span></a>
+              <a href="/legal/terms_of_use" @click="superLinke('使用條款')" target="_blank"><span style="cursor:pointer;">使用條款</span></a>
+              <a href="/legal/privacy_policy" @click="superLinke('隱私政策')" target="_blank"><span style="cursor:pointer;">隱私政策</span></a>
             </div>
           </div>
           <div id="specialLine"></div>
@@ -152,22 +151,19 @@
             <h3 style="padding-top: 0px;margin-top:0px;">免費客服專線</h3>
             <div class="text-center">
             <div class="phone">
-              <span>
-                <img src="static/images/footerImg/tel.png" alt="" class="img-responsive">
-              </span>
-              <span style="position:relative;top:-30px;">
+              <p id="phoneNumberSpan">
                 0800-234-088
-              </span>
+              </p>
               <h4>(週一~週五 09:30~18:00)</h4>
             </div>
             </div>
           </div>
           <div id="specialLine"></div>
-          <div class="col-xs-3">
+          <div class="col-xs-3" id="secondColXs">
             <div class="getContact">
               <h3 style="padding-top: 0px;margin-top:0px;">關注我們</h3>
              <span id="fbSVG" @click="fbClick()">
-                <a href="https://www.facebook.com/kaistraventure">
+                <a target="_blank" href="https://www.facebook.com/kaistraventure">
                 <div class="fbround">
                   <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       width="9.175px" height="19.732px" viewBox="0 0 9.175 19.732" enable-background="new 0 0 9.175 19.732" xml:space="preserve">
@@ -305,6 +301,9 @@ export default {
       })
     },
     userClickSpan: function(name) {
+      if(name == '機車強制'){
+        this.$router.push('/');
+      }
       var PageName = this.returnPageTitle(this.$router.currentRoute.name);
       this.$ga.event({
         eventCategory: pageName,
@@ -388,7 +387,7 @@ export default {
     showingNavBar: function () {
       $('#navbar').css({
         'height': 'auto',
-        'background-color': 'hsla(0,0%,100%,.8)'
+        'background-color': 'rgba(0,0,0,.8)'
       })
       if($('.fa-times').hasClass('hidden')){
         $('.icon-bar').addClass('hidden');
@@ -397,8 +396,7 @@ export default {
         $('.fa-times').addClass('hidden');
         $('.icon-bar').removeClass('hidden');
       }
-      
-
+      document.querySelector('#navBtnBar').scrollIntoView();
       $('#logIn').css({
         'color': '#777777',
         'margin-top': '0px',
@@ -493,17 +491,6 @@ export default {
       }
     },
     toStyle: function() {
-      if(this.$router.currentRoute.name == 'indexPage'){
-          $(document).on('scroll', function(){
-            console.log($(document).scrollTop())
-            if($(document).scrollTop() > 400){
-              $('#defaultIndex img').attr('src', './static/assets/logo.png');
-            }else{
-              $('#defaultIndex img').attr('src', './static/assets/logoWhite.png');
-            }  
-          });
-        }else{
-        }
     },
     privateAnnouce: function () {
       let pageName = this.$router.currentRoute.name
@@ -547,278 +534,323 @@ export default {
   },
   computed: {
     renderJquery: function() {
-      this.toStyle();
-      $(document).ready(function(){
-        if(!localStorage.getItem('style')){
-          if($(document).scrollTop() < 400 && $(document).width() < 767){
-            $('#defaultIndex ul svg').css({
-              "fill": "gray"
-            });
-          }
-        }
-        if(window.innerWidth <= 767){
-          $('#MobileIdBanner6').css({
-            'max-width': '120%'
-          });
-        }else{
-          $('#defaultIndex ul li span').mouseover(function(){
-            if($(document).scrollTop() > 400){
-              $('#motorPli').mouseover(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.icon-motor-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#activityPli').mouseover(function(){
-                $('.icon-activity svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.activityW-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#motorPli').mouseleave(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': 'gray'
-                });
-                $('.icon-motor-li').css({
-                  'color': 'gray'
-                });
-              });
-              $('#activityPli').mouseleave(function(){
-                $('.icon-activity svg').css({
-                  'fill': 'gray'
-                });
-                $('.activityW-li').css({
-                  'color': 'gray'
-                });
-              });
-            }else{
-              console.log('123423142', localStorage.getItem('style'));
-              if(!localStorage.getItem('style') && localStorage.getItem('style') == null){
-                $('#motorPli').mouseover(function(){
-                  $('.icon-cl-motorbike svg').css({
-                    'fill': '#d0596e'
-                  });
-                  $('.icon-motor-li').css({
-                    'color': '#d0596e'
-                  });
-                });
-                $('#activityPli').mouseover(function(){
-                  $('.icon-activity svg').css({
-                    'fill': '#d0596e'
-                  });
-                  $('.activityW-li').css({
-                    'color': '#d0596e'
-                  });
-                });
-                $('#motorPli').mouseleave(function(){
-                  $('.icon-cl-motorbike svg').css({
-                    'fill': 'white'
-                  });
-                  $('.icon-motor-li').css({
-                    'color': 'white'
-                  });
-                });
-                $('#activityPli').mouseleave(function(){
-                  $('.icon-activity svg').css({
-                    'fill': 'white'
-                  });
-                  $('.activityW-li').css({
-                    'color': 'white'
-                  });
-                });
-              }
-            }
-          });
-            $('#fbSVG').mouseover(function(){
-              $('#fbSVG .fbround svg').css({
-                'fill': 'white'
-              });
-            });
-            $('#fbSVG').mouseleave(function(){
-              $('#fbSVG .fbround svg').css({
-                'fill': '#4267b2'
-              });
-            });
-        }
-      });
-      $(window).on('scroll', document, function(){
-          console.log($(document).scrollTop())
-          if(!JSON.parse(localStorage.getItem('style'))){
-             if($(document).scrollTop() > 400){
-              //bigger
-              $('#defaultIndex').css({
-                "background-color" : "hsla(0,0%,100%,.8)",
-              });
-              // $('#defaultIndex #navbar').css({
-              //     "background-color" : "hsla(0,0%,100%,.8)",
-              // });
-              $('#defaultIndex ul li p').css({
-                  "color": "gray"
-              });
-              $('#navbar button').css({
-                "color": "gray"
-              });
-              $('#navbar #logOut').css({
-                  "color": "gray"
-              });
-              $('.navbar-default .navbar-toggle .icon-bar').css({
-                "background-color" : "#ddd",
-              });
-              if($(document).width() < 767) {
-                $('#navbar').css({
-                  "background-color" : "rgba(0,0,0,.8)"
-                });
-                $('#defaultIndex ul li span').css({
-                  "color": "white"
-                });
-                $('#defaultIndex ul li p').css({
-                  "color": "white"
-                });
-                $('#defaultIndex ul li i svg').css({
-                  "fill": "white"
-                });
-                $('#navbar #logOut').css({
-                  "color": "#fff"
-                });
-                $('#navbar button').css({
-                  "color": "#fff"
-                });
-              } else {
-                $('#navbar #logOut').css({
-                  "color": "gray",
-                  "background-color": "white"
-                });
-                 if($(document).scrollTop() > 400){
-                   $('#navbar #logIn').mouseover(function(){
-                    $('#navbar #logIn').css({
-                      "color": "white", 
-                      "background-color": "#d0596e" 
-                    }); 
-                  });
-                  $('#navbar #logIn').mouseleave(function(){
-                    $('#navbar #logIn').css({
-                      "color": "gray", 
-                      "border-color": "gray", 
-                      "background-color": "transparent" 
-                    }); 
-                  });
-                 }else{
-                  // $('#defaultIndex ul li span').css({
-                  // "color": "gray"
-                  // });
-                  // $('#defaultIndex ul li span').css({
-                  // "color": "gray"
-                  // });
-                  // $('#defaultIndex ul li svg').css({
-                  //   "fill": "gray"
-                  // });
-                 }
-                $('#defaultIndex ul li span').css({
-                  "fill": "gray",
-                  "color": "gray"
-                  }); 
-                $('#defaultIndex ul li i svg').css({
-                  "fill": "gray"
-                });
-                $('#navbar button').css({
-                  "color": "gray",
-                  "border-color": "gray"
-                });
-                $('#navbar #logOut').css({
-                  "color": "white",
-                  "background-color": "gray"
-                });
-              }
-            }else{
-                //smaller 
-                $('#defaultIndex #navbar').css({
-                  "background-color" : "transparent"
-                });
-                $('#navbar button').css({
-                  "color": "#fff"
-                });
-                // $('#navbar #logOut').css({
-                //   "color": "gray"
-                // });
-                $('#defaultIndex').css({
-                  "background-color" : "transparent",
-                });
-                $('#defaultIndex ul li p').css({
-                    "color": "#fff",
-                });
-                $('#defaultIndex ul li i svg').css({
-                    "fill": "white",
-                });
-                if($(document).width() < 767) {
-                  // $('#navbar').css({
-                  //   "background-color" : "rgba(255, 255, 255, 0.8)"
-                  // });
-                  $('#defaultIndex #navbar').css({
-                  "background-color" : "rgba(255, 255, 255, 0.8)",
-                  });
-                  $('#defaultIndex ul li p').css({
-                    "color": "gray"
-                  });
-                  $('#defaultIndex ul svg').css({
-                    "fill": "gray"
-                  });
-                  $('#navbar button').css({
-                    "color": "gray"
-                  });
-                  $('#defaultIndex ul li span').css({
-                  "color": "gray"
-                  });
-                $('#defaultIndex ul li p').css({
-                  "color": "gray"
-                });
-                $('#defaultIndex ul li i svg').css({
-                  "fill": "gray"
-                });
-                }else {
-                  $('#navbar #logOut').css({
-                    "color": "gray",
-                    "background-color": "white",
-                    "border-color": "white"
-                  });
-                  $('#navbar #logIn').css({
-                    "border-color": "white"
-                  });
-                  $('#defaultIndex ul li span').css({
-                  "fill": "white",
-                  "color": "white"
-                  }); 
-                  if($(document).scrollTop() < 400){
-                  $('#navbar #logIn').mouseover(function(){
-                    $('#navbar #logIn').css({
-                      "color": "#d0596e", 
-                      "background-color": "transparent",
-                      "border-color":"#d0596e"
-                    }); 
-                  });
-                  $('#navbar #logIn').mouseleave(function(){
-                    $('#navbar #logIn').css({
-                      "color": "white", 
-                      "background-color": "transparent",
-                      "border-color":"white"
-                    }); 
-                  });
-                  $('#navbar #logOut').mouseleave(function(){
-                    $('#navbar #logOut').css({
-                      "color": "white", 
-                      "background-color": "gray",
-                      "border-color":"gray"
-                    }); 
-                  });
-                 }
-                }
-            }  
-          };
+      if(window.innerWidth <= 480){
+        $('#navBtnBar').css({
+          'display': 'block'
+        });
+      };
+      //   if(false){
+      //     alert('hi');
+      //     if($(document).scrollTop() < 400 && $(document).width() < 767){
+      //       $('#defaultIndex ul svg').css({
+      //         "fill": "gray"
+      //       });
+      //     }
+      //   }
+      //   if(window.innerWidth <= 767){
+      //     $('#MobileIdBanner6').css({
+      //       'max-width': '120%'
+      //     });
+      //   }else{
+      //     $('#defaultIndex ul li span').mouseover(function(){
+      //       if($(document).scrollTop() > 400){
+      //         $('#motorPli').mouseover(function(){
+      //           $('.icon-cl-motorbike svg').css({
+      //             'fill': '#d0596e'
+      //           });
+      //           $('.icon-motor-li').css({
+      //             'color': '#d0596e'
+      //           });
+      //         });
+      //         $('#activityPli').mouseover(function(){
+      //           $('.icon-activity svg').css({
+      //             'fill': '#d0596e'
+      //           });
+      //           $('.activityW-li').css({
+      //             'color': '#d0596e'
+      //           });
+      //         });
+      //         $('#motorPli').mouseleave(function(){
+      //           $('.icon-cl-motorbike svg').css({
+      //             'fill': 'gray'
+      //           });
+      //           $('.icon-motor-li').css({
+      //             'color': 'gray'
+      //           });
+      //         });
+      //         $('#activityPli').mouseleave(function(){
+      //           $('.icon-activity svg').css({
+      //             'fill': 'gray'
+      //           });
+      //           $('.activityW-li').css({
+      //             'color': 'gray'
+      //           });
+      //         });
+      //       }else{
+      //         console.log('123423142', localStorage.getItem('style'));
+      //         if(false){
+      //           $('#motorPli').mouseover(function(){
+      //             $('.icon-cl-motorbike svg').css({
+      //               'fill': '#d0596e'
+      //             });
+      //             $('.icon-motor-li').css({
+      //               'color': '#d0596e'
+      //             });
+      //           });
+      //           $('#activityPli').mouseover(function(){
+      //             $('.icon-activity svg').css({
+      //               'fill': '#d0596e'
+      //             });
+      //             $('.activityW-li').css({
+      //               'color': '#d0596e'
+      //             });
+      //           });
+      //           $('#motorPli').mouseleave(function(){
+      //             $('.icon-cl-motorbike svg').css({
+      //               'fill': 'white'
+      //             });
+      //             $('.icon-motor-li').css({
+      //               'color': 'white'
+      //             });
+      //           });
+      //           $('#activityPli').mouseleave(function(){
+      //             $('.icon-activity svg').css({
+      //               'fill': 'white'
+      //             });
+      //             $('.activityW-li').css({
+      //               'color': 'white'
+      //             });
+      //           });
+      //         }
+      //       }
+      //     });
+      //       $('#fbSVG').mouseover(function(){
+      //         $('#fbSVG .fbround svg').css({
+      //           'fill': 'white'
+      //         });
+      //       });
+      //       $('#fbSVG').mouseleave(function(){
+      //         $('#fbSVG .fbround svg').css({
+      //           'fill': '#4267b2'
+      //         });
+      //       });
+      //   }
+      // });
+      //     console.log($(document).scrollTop())
+      //     if(false){
+      //       if($(document).scrollTop() > 400){
+      //         $('#defaultIndex img').attr('src', './static/assets/logo.png');
+      //         $('#defaultIndex').css({
+      //           "background-color" : "hsla(0,0%,100%,.8)",
+      //         });
+      //       }else{
+      //         $('#defaultIndex img').attr('src', './static/assets/logoWhite.png');
+      //         $('#defaultIndex #navbar').css({
+      //             "background-color" : "white"
+      //         });
+      //       }  
+      //       if($(document).scrollTop() > 400){
+      //         //bigger
+      //         $('#defaultIndex').css({
+      //           "background-color" : "hsla(0,0%,100%,.8)",
+      //         });
+      //         // $('#defaultIndex #navbar').css({
+      //         //     "background-color" : "hsla(0,0%,100%,.8)",
+      //         // });
+      //         $('#defaultIndex ul li p').css({
+      //             "color": "gray"
+      //         });
+      //         $('#navbar #logIn').css({
+      //           "color": "gray"
+      //         });
+              
+      //         $('#navbar #logOut span').css({
+      //             "color": "white"
+      //         });
+      //         $('#navbar #logOut i').css({
+      //             "color": "white"
+      //           });
+      //         $('.navbar-default .navbar-toggle .icon-bar').css({
+      //           "background-color" : "#ddd",
+      //         });
+      //         if($(document).width() < 767) {
+      //           $('#navbar').css({
+      //             "background-color" : "rgba(0,0,0,.8)"
+      //           });
+      //           $('#defaultIndex ul li span').css({
+      //             "color": "white"
+      //           });
+      //           $('#defaultIndex ul li p').css({
+      //             "color": "white"
+      //           });
+      //           $('#defaultIndex ul li i svg').css({
+      //             "fill": "white"
+      //           });
+      //           $('#navbar #logOut').css({
+      //             "color": "#fff"
+      //           });
+      //           $('#navbar button').css({
+      //             "color": "#fff"
+      //           });
+      //         } else {
+      //           $('#navbar #logOut').css({
+      //             "color": "gray",
+      //             "background-color": "white"
+      //           });
+      //            if($(document).scrollTop() > 400){
+      //              $('#navbar #logIn').mouseover(function(){
+      //               $('#navbar #logIn').css({
+      //                 "color": "white", 
+      //                 "background-color": "#d0596e" 
+      //               }); 
+      //             });
+      //             $('#navbar #logIn').mouseleave(function(){
+      //               $('#navbar #logIn').css({
+      //                 "color": "gray", 
+      //                 "border-color": "gray", 
+      //                 "background-color": "transparent" 
+      //               }); 
+      //             });
+      //            }else{
+      //             // $('#defaultIndex ul li span').css({
+      //             // "color": "gray"
+      //             // });
+      //             // $('#defaultIndex ul li span').css({
+      //             // "color": "gray"
+      //             // });
+      //             // $('#defaultIndex ul li svg').css({
+      //             //   "fill": "gray"
+      //             // });
+      //            }
+      //           $('#defaultIndex ul li span').css({
+      //             "fill": "gray",
+      //             "color": "gray"
+      //             }); 
+      //           $('#defaultIndex ul li i svg').css({
+      //             "fill": "gray"
+      //           });
+      //           $('#navbar button').css({
+      //             "color": "gray",
+      //             "border-color": "gray"
+      //           });
+      //           $('#navbar #logOut').css({
+      //             "color": "white",
+      //             "background-color": "gray"
+      //           });
+      //         }
+      //       }else{
+      //           //smaller
+      //           $('#defaultIndex #navbar').css({
+      //             "background-color" : "transparent"
+      //           });
+      //           $('#navbar #logIn').css({
+      //             "color": "#fff"
+      //           });
+      //           if(window.innerWidth <= 500){
+      //             $('#navbar #logOut span').css({
+      //                 "color": "white"
+      //             });
+      //             $('#navbar #logOut i').css({
+      //                 "color": "white"
+      //             });
+      //           }else{
+      //             $('#navbar #logOut span').css({
+      //             "color": "gray"
+      //             });
+      //             $('#navbar #logOut i').css({
+      //               "color": "gray"
+      //             });
+      //           }
+      //           $('#defaultIndex').css({
+      //             "background-color" : "transparent",
+      //           });
+      //           $('#defaultIndex ul li p').css({
+      //               "color": "#fff",
+      //           });
+      //           $('#defaultIndex ul li i svg').css({
+      //               "fill": "white",
+      //           });
+     
+      //             $('#defaultIndex ul li p').css({
+      //               "color": "gray"
+      //             });
+      //             $('#defaultIndex ul svg').css({
+      //               "fill": "gray"
+      //             });
+      //             $('#navbar button').css({
+      //               "color": "gray"
+      //             });
+      //             $('#defaultIndex ul li span').css({
+      //             "color": "gray"
+      //             });
+      //           $('#defaultIndex ul li p').css({
+      //             "color": "gray"
+      //           });
+      //           $('#defaultIndex ul li i svg').css({
+      //             "fill": "gray"
+      //           });
+      //           }else {
+      //             $('#navbar #logOut').css({
+      //               "color": "gray",
+      //               "background-color": "white",
+      //               "border-color": "white"
+      //             });
+      //             $('#navbar #logIn').css({
+      //               "border-color": "white"
+      //             });
+      //             $('#defaultIndex ul li span').css({
+      //             "fill": "white",
+      //             "color": "white"
+      //             }); 
+      //             if($(document).scrollTop() < 400){
+      //                 $('#navbar #logIn').mouseover(function(){
+      //                   $('#navbar #logIn').css({
+      //                     "color": "#d0596e", 
+      //                     "background-color": "transparent",
+      //                     "border-color":"#d0596e"
+      //                   }); 
+      //                 });
+      //                 $('#navbar #logIn').mouseleave(function(){
+      //                   $('#navbar #logIn').css({
+      //                     "color": "white", 
+      //                     "background-color": "transparent",
+      //                     "border-color":"white"
+      //                   }); 
+      //                   if($(document).scrollTop() < 400){
+      //                     $('#navbar #logOut').css({
+      //                     "color": "gray", 
+      //                     "background-color": "white",
+      //                     "border-color":"white"
+      //                     }); 
+      //                     $('#navbar #logOut span').css({
+      //                       "color": "gray"
+      //                     }); 
+      //                     $('#navbar #logOut i').css({
+      //                       "color": "gray"
+      //                     }); 
+      //                   }
+      //                 });
+      //                 $('#navbar #logOut').mouseleave(function(){
+      //                   if($(document).scrollTop() < 400){
+      //                     $('#navbar #logOut').css({
+      //                     "color": "gray", 
+      //                     "background-color": "white",
+      //                     "border-color":"white"
+      //                     }); 
+      //                     $('#navbar #logOut span').css({
+      //                       "color": "gray"
+      //                     }); 
+      //                     $('#navbar #logOut i').css({
+      //                       "color": "gray"
+      //                     }); 
+      //                   }
+      //                 });
+      //             }
+      //           }
+      //       }  
+      //     };
           
-      });
+      // });
     },
     liveAgentButton: function () {
       this.liveAgentOn = this.$parent.liveAgentButton
@@ -855,7 +887,7 @@ export default {
                 'right': '90px'
             });
             if($(document).scrollTop() < 400){
-                if(!JSON.parse(localStorage.getItem('style'))){
+                if(false){
                   $('#navbar #logIn').css({
                     'border-color': 'white',
                     'color': 'white'
@@ -865,6 +897,7 @@ export default {
                     'color': 'gray',
                     'background-color': 'white'
                   })
+
                   $('#navbar #logOut').mouseover(function(){
                     $('#navbar #logOut').css({
                       'border-color': '#d0596e',
@@ -885,7 +918,15 @@ export default {
                       'color': 'white',
                       'background-color': 'gray'
                       })
+                      $('#navbar #logOut span').css({
+                      'color': 'white',
+                      })
                     }
+                  });
+                  $('#navbar #logIn').mouseleave(function(){
+                    $('#navbar #logOut').css({
+                      'color': 'white',
+                    })
                   });
                 }else{
                   $('#navbar #logOut').mouseover(function(){
@@ -951,21 +992,22 @@ export default {
         }
       })
     this.$nextTick(function () {
-      $('#navbar #logOut').mouseleave(function(){
-        if($(document).scrollTop() > 400){
-          $('#navbar #logOut').css({
-          'border-color': 'gray',
-          'color': 'white',
-          'background-color': 'gray'
-          })
-        }else{
-          $('#navbar #logOut').css({
-          'border-color': 'gray',
-          'color': 'white',
-          'background-color': 'gray'
-          })
-        }
-      });
+      
+      // $('#navbar #logOut').mouseleave(function(){
+      //   if($(document).scrollTop() > 400){
+      //     $('#navbar #logOut').css({
+      //     'border-color': 'gray',
+      //     'color': 'white',
+      //     'background-color': 'gray'
+      //     })
+      //   }else{
+      //     $('#navbar #logOut').css({
+      //     'border-color': 'gray',
+      //     'color': 'white',
+      //     'background-color': 'gray'
+      //     })
+      //   }
+      // });
       if ($(window).width() < 500) {
         $('.first-slide').attr('src', './static/css/img/mobileBanner5.jpg')
         $('.first-slide').css({
@@ -1032,6 +1074,20 @@ export default {
   .mask {
     display:none!important;
   }
+  #navbar {
+    background-color: rgba(0,0,0,.8)!important;
+    color: white;
+    height: auto;
+  }
+  .nav.navbar-nav.navbar-left ul li {
+    color: white;
+  }
+}
+
+@media screen and (max-width:480px) and (min-width:400px){
+  #logoImg{
+    margin-left:15px;
+  }
 }
 
 #footer img {
@@ -1088,7 +1144,7 @@ export default {
 }
 
 #footer-Bottom span {
-font-size:14.4px;
+font-size:15.4px;
 font-weight:400;
 margin-bottom: 16px;
 display: inline-block;
@@ -1097,6 +1153,59 @@ padding-left: 5px;
 text-decoration-style: solid;
 }
 
+
+@media screen and (max-width: 500px) {
+  #footer-Bottom #specialColFooter {
+    padding-top: 28px;
+    padding-bottom: 20px;
+  }
+
+  #footer-Bottom #fbClick {
+  margin-top: 0px!important;
+  border: none!important;
+  }
+
+#footer-Bottom .col-xs-3 {
+  border-top: 1px solid #ababab!important;
+}
+
+#footer-Bottom #needToCenterCol #secondColXs {
+    margin-top: 40px;
+}
+
+#footer-Bottom .phone img {
+  height: 40px!important;
+  width: 40px!important;
+  max-width: 100%!important;
+}
+
+#footer-Bottom .phone h4 {
+  font-size: 19.2px;
+}
+
+#footer-Bottom .phone span {
+  font-size: 25.5px!important;
+}
+
+#footer-Bottom .getContact {
+    margin-top: 15px!important;
+}
+
+#footer-Bottom .col-xs-6 {
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#footer-Bottom .col-xs-6 span {
+  padding-right: 7px;
+}
+
+}
+
+
+#specialColFooter h3 {
+  padding-bottom: 10px;
+}
 #specialColFooter {
     border-right: 1px solid #ababab;
     border-left: 1px solid #ababab;
@@ -1116,8 +1225,8 @@ text-decoration-style: solid;
 }
 
 #footer-Bottom .phone h4 {
-  position: relative;
-  top: -30px;
+  /* position: relative;
+  top: -30px; */
   color: #888686;
   font-size: 19.2px;
   font-weight: 300px;
@@ -1130,12 +1239,13 @@ text-decoration-style: solid;
   padding-top: 16px;
 }
 
+
 #navbar .navbar-left {
   font-size: 16px;
 }
 
 #navbar svg {
-  fill: white;
+  fill: gray;
 }
 
 .mask{
@@ -1215,6 +1325,22 @@ text-decoration-style: solid;
     width: auto;
 }
 
+@media screen and (max-width: 1390px)and (min-width: 500px){
+  #DesktopIdBanner6 {
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 1390px) and (min-width: 1200px) {
+  #phoneNumberSpan {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 770px) {
+  #footer-Bottom #specialColFooter h4 {
+    font-size: 15px!important;
+  }
+}
 @media screen and (max-width: 767px) {
   #navbar li {
     text-align: center;
@@ -1237,7 +1363,7 @@ text-decoration-style: solid;
     width: 100%!important;
   }
   #navbar {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
   }
   #defaultIndex .navbar-toggle {
     border-width: 3px;
@@ -1258,6 +1384,7 @@ text-decoration-style: solid;
   }
   #footer-Bottom .col-xs-3{
     top: 0px;
+    margin-top: 15px;
     width: 100%!important;
     border:none;
   }
@@ -1265,10 +1392,13 @@ text-decoration-style: solid;
     padding: 0px;
   }
   #footer-Bottom .getContact{
-    margin-top: -20px!important;
+    margin-top: -20px;
   }
   #fbSVG {
     left: -3px;
+  }
+  #phoneNumberSpan{
+    background-position-x: 13%!important;
   }
 }
 
@@ -1278,6 +1408,22 @@ text-decoration-style: solid;
 @media screen and (max-width: 414px) and (min-width: 400px) {
   .textDiv {
     left: 2%;
+  }
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1200px) {
+  #footer-Bottom #specialColFooter span{
+    font-size: 22px;
+    float:left;
+    left: 30px;
+    top: -38px!important;
+  }
+  #footer-Bottom #specialColFooter h4 {
+    left: 7px;
+    white-space: nowrap;
+  }
+  #phoneNumberSpan {
+    font-size: 19px;
   }
 }
 
@@ -1291,6 +1437,14 @@ text-decoration-style: solid;
   #footer-Bottom #specialColFooter span:nth-child(2) {
     top: -20px;
   }
+  #phoneNumberSpan {
+    font-size: 16px;
+  }
+  #footer-Bottom #specialColFooter h4 {
+    white-space: nowrap;
+    position: relative;
+    left: -6px;
+  }
   /* #defaultIndex .navbar-toggle {
       display: initial;
       margin-top: 20px;
@@ -1301,6 +1455,14 @@ text-decoration-style: solid;
   #defaultIndex .navbar-header {
     width:100%!important;
   } */
+}
+
+@media screen and (min-width:800px) {
+  #footer-Bottom #needToCenterCol {
+    margin: 0 auto;
+    width: 80%;
+    left: 10%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -1317,15 +1479,29 @@ text-decoration-style: solid;
   .activityRow {
     border-top: none!important;
   }
+  #navbar ul li p {
+    color: white!important;
+  }
+  #navbar ul li i {
+    color: white!important;
+  }
+  #navbar ul li svg {
+    fill: white!important;
+  }
+  #defaultIndex {
+    background-color:white;
+  }
 }
   #navbar {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.8);
   }
   #navbar p {
-    color: white;
+    color: gray;
     margin: 15px;
     font-weight: bold;
   }
+
+  
 
   #navbar button {
       /* Safari 3-4, iOS 1-3.2, Android 1.6- */
@@ -1340,7 +1516,7 @@ text-decoration-style: solid;
     color: #fff;
     background: transparent;
     border-color: #fff;
-    margin-top: 18px;
+    margin-top: 20px;
     width: 144px;
     height: 40px;
     border: 2px solid;
@@ -1350,8 +1526,8 @@ text-decoration-style: solid;
   }
 
   @media screen and (max-width:1024px){
-    .phone img {
-      width: 50%!important;
+    #footer-Bottom .phone img {
+      width: 50%;
     }
     .phone span, .phone h4{
       font-size: 16px!important;
@@ -1389,12 +1565,12 @@ text-decoration-style: solid;
   background-color: transparent;
 }
 
-.navbar span:hover {
+/* .navbar span:hover {
   > svg {
     fill: #d0596e;
     stroke: #d0596e;
   }
-}
+} */
 #fbClick:hover {
   > .fbround {
       background-color:rgb(66, 103, 178);
@@ -1403,6 +1579,30 @@ text-decoration-style: solid;
     fill: white;
     stroke: white;
   }
+}
+
+p#activityPli:hover svg path,
+p#activityPli:hover{
+  fill: #d0596e!important;
+}
+
+p#motorPli:hover svg path,
+p#motorPli:hover{
+  fill: #d0596e!important;
+}
+
+#fbSVG:hover svg path,
+#fbSVG:hover{
+  fill: white!important;
+}
+
+#motorPli span {
+  position: relative;
+  top: -3px;
+}
+#activityPli span {
+  position: relative;
+  top: -3px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1417,6 +1617,23 @@ text-decoration-style: solid;
   .logo {
     margin-right: 6px;
     margin-left: 10px;
+  }
+}
+
+#phoneNumberSpan {
+  background: url('../static/images/footerImg/tel.png');
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-size: contain;
+  display:block;
+  color: #888686;
+  font-weight:500;
+  background-position-x: 10%;
+}
+@media screen and (min-width : 768px) and (max-width : 769px){ 
+  #footer .title {
+    padding-left: 0px;
+    margin-left: -3px;
   }
 }
 </style>

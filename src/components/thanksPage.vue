@@ -1,5 +1,5 @@
 <template>
-  <div class="thanksPage" style="margin-top: 80px;">
+  <div class="thanksPage">
 
     <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -38,7 +38,7 @@
           </div>
           <div class="col-sm-12" style="margin-top: 5px;">
             <div class="thanksWords text-center">
-              <p style="color:#e84466;font-size:16px;">提醒您：此次訂購紀錄，並非正式保險契約憑證，核保完成後本公司將會郵寄保險卡及保費收據至保單登記地址。</p>
+              <p style="color:#e84466;font-size:16px;">提醒您：此次訂購紀錄，並非正式保險契約憑證，核保完成後本公司將會郵寄保險卡至保單登記地址。</p>
               <div class="buttonProject text-center" style="margin-top: 30px;">
                 <button class="backToIndexOfOtherPageButton" @click="toGoBackIndex">回到首頁</button>
               </div>
@@ -179,92 +179,92 @@ export default {
   },
   computed: {
     toShowActivity: function () {
-          setTimeout(function(){
-            localStorage.setItem('style', 'true');
-            $('#defaultIndex img').attr('src', './static/assets/logo.png');
-            $('#defaultIndex #navbar').css({
-              'background-color': 'white'
-            });
-            $('#defaultIndex #navbar span').css({
-              'color': 'gray'
-            });
-            $('#defaultIndex #navbar svg').css({
-              'fill': 'gray'
-            });
-            $('#defaultIndex #navbar p').css({
-              'color': 'gray'
-            });
-            $('#defaultIndex #navbar button').css({
-              'color': 'gray',
-              'border-color': 'gray'
-            });
-            $('#defaultIndex #navbar #logOut').css({
-              'border-color': 'gray',
-              'color': 'white',
-              'background-color': 'gray'
-            })
-            $('#defaultIndex #navbar #logOut span').css({
-              'color': 'white',
-            })
-            $('#defaultIndex #navbar #logOut i').css({
-              'color': 'white',
-            })
-            $('#navbar #logIn').mouseover(function(){
-              $('#navbar #logIn').css({
-                'border-color': '#d0596e',
-                'color': 'white',
-                'background-color': '#d0596e'
-              })
-            });
-            $('#navbar #logIn').mouseleave(function(){
-              $('#navbar #logIn').css({
-                'border-color': 'gray',
-                'color': 'gray',
-                'background-color': 'transparent'
-              })
-            });
-            $('#navbar #logOut').mouseover(function(){
-              $('#navbar #logOut').css({
-                'border-color': '#d0596e',
-                'color': 'white',
-                'background-color': '#d0596e'
-              })
-            });
+        //   setTimeout(function(){
+        //     localStorage.setItem('style', 'true');
+        //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+        //     $('#defaultIndex #navbar').css({
+        //       'background-color': 'white'
+        //     });
+        //     $('#defaultIndex #navbar span').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar svg').css({
+        //       'fill': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar p').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar button').css({
+        //       'color': 'gray',
+        //       'border-color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar #logOut').css({
+        //       'border-color': 'gray',
+        //       'color': 'white',
+        //       'background-color': 'gray'
+        //     })
+        //     $('#defaultIndex #navbar #logOut span').css({
+        //       'color': 'white',
+        //     })
+        //     $('#defaultIndex #navbar #logOut i').css({
+        //       'color': 'white',
+        //     })
+        //     $('#navbar #logIn').mouseover(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
+        //     $('#navbar #logIn').mouseleave(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': 'gray',
+        //         'color': 'gray',
+        //         'background-color': 'transparent'
+        //       })
+        //     });
+        //     $('#navbar #logOut').mouseover(function(){
+        //       $('#navbar #logOut').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
 
-            $('#motorPli').mouseover(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.icon-motor-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#activityPli').mouseover(function(){
-                $('.icon-activity svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.activityW-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#motorPli').mouseleave(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': 'gray'
-                });
-                $('.icon-motor-li').css({
-                  'color': 'gray'
-                });
-              });
-              $('#activityPli').mouseleave(function(){
-                $('.icon-activity svg').css({
-                  'fill': 'gray'
-                });
-                $('.activityW-li').css({
-                  'color': 'gray'
-                });
-              });
-            $('.mask').hide();
-        }, 500);
+        //     $('#motorPli').mouseover(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#activityPli').mouseover(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#motorPli').mouseleave(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //       $('#activityPli').mouseleave(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //     $('.mask').hide();
+        // }, 500);
     }
   },
   mounted () {
@@ -343,5 +343,11 @@ export default {
     .thanksDiv {
       margin-top: -15px;
     }
+  }
+  .thanksPage {
+      margin-top: 80px;
+    }
+  @media screen and (max-width: 480px) {
+    
   }
 </style>

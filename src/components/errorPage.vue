@@ -121,91 +121,91 @@ export default {
   },
   computed: {
      toShowActivity: function () {
-          setTimeout(function(){
-            $('#defaultIndex img').attr('src', './static/assets/logo.png');
-            $('#defaultIndex #navbar').css({
-              'background-color': 'white'
-            });
-            $('#defaultIndex #navbar span').css({
-              'color': 'gray'
-            });
-            $('#defaultIndex #navbar svg').css({
-              'fill': 'gray'
-            });
-            $('#defaultIndex #navbar p').css({
-              'color': 'gray'
-            });
-            $('#defaultIndex #navbar button').css({
-              'color': 'gray',
-              'border-color': 'gray'
-            });
-            $('#defaultIndex #navbar #logOut').css({
-              'border-color': 'gray',
-              'color': 'white',
-              'background-color': 'gray'
-            })
-            $('#defaultIndex #navbar #logOut span').css({
-              'color': 'white',
-            })
-            $('#defaultIndex #navbar #logOut i').css({
-              'color': 'white',
-            })
-            $('#navbar #logIn').mouseover(function(){
-              $('#navbar #logIn').css({
-                'border-color': '#d0596e',
-                'color': 'white',
-                'background-color': '#d0596e'
-              })
-            });
-            $('#navbar #logIn').mouseleave(function(){
-              $('#navbar #logIn').css({
-                'border-color': 'gray',
-                'color': 'gray',
-                'background-color': 'transparent'
-              })
-            });
-            $('#navbar #logOut').mouseover(function(){
-              $('#navbar #logOut').css({
-                'border-color': '#d0596e',
-                'color': 'white',
-                'background-color': '#d0596e'
-              })
-            });
+        //   setTimeout(function(){
+        //     $('#defaultIndex img').attr('src', './static/assets/logo.png');
+        //     $('#defaultIndex #navbar').css({
+        //       'background-color': 'white'
+        //     });
+        //     $('#defaultIndex #navbar span').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar svg').css({
+        //       'fill': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar p').css({
+        //       'color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar button').css({
+        //       'color': 'gray',
+        //       'border-color': 'gray'
+        //     });
+        //     $('#defaultIndex #navbar #logOut').css({
+        //       'border-color': 'gray',
+        //       'color': 'white',
+        //       'background-color': 'gray'
+        //     })
+        //     $('#defaultIndex #navbar #logOut span').css({
+        //       'color': 'white',
+        //     })
+        //     $('#defaultIndex #navbar #logOut i').css({
+        //       'color': 'white',
+        //     })
+        //     $('#navbar #logIn').mouseover(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
+        //     $('#navbar #logIn').mouseleave(function(){
+        //       $('#navbar #logIn').css({
+        //         'border-color': 'gray',
+        //         'color': 'gray',
+        //         'background-color': 'transparent'
+        //       })
+        //     });
+        //     $('#navbar #logOut').mouseover(function(){
+        //       $('#navbar #logOut').css({
+        //         'border-color': '#d0596e',
+        //         'color': 'white',
+        //         'background-color': '#d0596e'
+        //       })
+        //     });
 
-            $('#motorPli').mouseover(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.icon-motor-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#activityPli').mouseover(function(){
-                $('.icon-activity svg').css({
-                  'fill': '#d0596e'
-                });
-                $('.activityW-li').css({
-                  'color': '#d0596e'
-                });
-              });
-              $('#motorPli').mouseleave(function(){
-                $('.icon-cl-motorbike svg').css({
-                  'fill': 'gray'
-                });
-                $('.icon-motor-li').css({
-                  'color': 'gray'
-                });
-              });
-              $('#activityPli').mouseleave(function(){
-                $('.icon-activity svg').css({
-                  'fill': 'gray'
-                });
-                $('.activityW-li').css({
-                  'color': 'gray'
-                });
-              });
-            $('.mask').hide();
-        }, 500);
+        //     $('#motorPli').mouseover(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#activityPli').mouseover(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': '#d0596e'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': '#d0596e'
+        //         });
+        //       });
+        //       $('#motorPli').mouseleave(function(){
+        //         $('.icon-cl-motorbike svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.icon-motor-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //       $('#activityPli').mouseleave(function(){
+        //         $('.icon-activity svg').css({
+        //           'fill': 'gray'
+        //         });
+        //         $('.activityW-li').css({
+        //           'color': 'gray'
+        //         });
+        //       });
+        //     $('.mask').hide();
+        // }, 500);
     }
   },
   mounted () {
@@ -304,5 +304,8 @@ export default {
     .thanksDiv {
       margin-top: -15px;
     }
+  }
+  .errorPage {
+    margin-top: 80px;
   }
 </style>
