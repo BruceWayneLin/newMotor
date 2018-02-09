@@ -17,7 +17,7 @@
     </div>
     <div class="row" style="margin-top: 40px;">
       <div class="col-xs-12 text-center">
-        <a class="btn-11" href="/CareLineTravel/travel/index">回首頁</a>
+        <a class="btn-11" href="/">回首頁</a>
       </div> 
     </div>
   </div>

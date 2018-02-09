@@ -181,8 +181,18 @@
         </div>  
         <div class="col-xs-12 text-center copyright">
          <div class="col-xs-12" id="fbClick">
-            <h6>© 2017 Careline. All Rights Reserved.
-            </h6>
+           <div class="divThumb divThumbTwo">
+              <h6>© 2017 Careline. All Rights Reserved.
+              </h6>
+           </div> 
+            <div class="divThumb divThumb">
+              <div id="iso" class="thumb"><img src="./assets/logoProof/ssl.gif" alt=""></div>
+              <div id="ssl" class="thumb"><img src="./assets/logoProof/iso.png" alt=""></div>
+            </div>
+            <div class="divThumb divThumbOne">
+              <h6>© 2017 Careline. All Rights Reserved.
+              </h6>
+            </div>
          </div>
         </div>
       </div>
@@ -1634,6 +1644,44 @@ p#motorPli:hover{
   #footer .title {
     padding-left: 0px;
     margin-left: -3px;
+  }
+}
+
+#fbClick #ssl img{
+    max-width: 69px;
+    max-height: 44px;
+}
+#fbClick #iso img{
+  max-width: 40px;
+  max-height: 56px;  
+}
+#fbClick .thumb {
+  display:inline-block;
+  margin-right: 1rem;
+}
+#fbClick .divThumb {
+  display:inline-block;
+}
+#fbClick .divThumb.divThumbTwo {
+  display:none;
+}
+@media screen and (max-width:570px){
+  #fbClick {
+    /* optional */
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  #fbClick .divThumb.divThumbOne {
+    display:none;
+  }
+  #fbClick .divThumb.divThumbTwo {
+    display:inline-block;
+  }
+  #footer-Bottom .getContact {
+    margin-top: 30px;
   }
 }
 </style>

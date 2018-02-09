@@ -144,13 +144,11 @@ export default {
   },
   head: {
     title: {
-      inner: '立即投保| Care Line英國凱萊機車強制險'
+      inner: '線上投保 | Care Line英國凱萊'
     },
     meta: [
-      {name: 'description', content: '投保機車強制險，就送 150 元全家禮物卡! | Care Line英國凱萊 網路機車強制險'},
       {name: 'keywords', content: '投保機車強制險，就送 150 元全家禮物卡! | Care Line英國凱萊 網路機車強制險'},
       {property: 'og:title', content: 'Care Line英國凱萊 網路機車強制險'},
-      {property: 'og:description', content: '投保機車強制險，就送 150 元全家禮物卡! | Care Line英國凱萊 網路機車強制險'},
       {property: 'og:image', content: 'https://motor.careline.com.tw/FB.jpg'},
       {property: 'og:site_name', content: '英國凱萊CareLine 網路保險'},
       {property: 'og:email', content: 'service@careline.com.tw'},
